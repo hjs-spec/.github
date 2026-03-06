@@ -46,18 +46,18 @@
 
 ### Python
 ```python
-from hjs import HJSClient
+from jep import HJSClient
 
-client = HJSClient(api_key="your-key")
+client = JEPClient(api_key="your-key")
 result = client.judgment("user@example.com", "approve")
 print(result['id'])  # jgd_1234567890abcd
 ```
 
 ### JavaScript
 ```javascript
-import HJSClient from '@hjs/sdk-js';
+import JEPClient from '@hjs/sdk-js';
 
-const client = new HJSClient({ apiKey: 'your-key' });
+const client = new JEPClient({ apiKey: 'your-key' });
 const result = await client.judgment({
   entity: 'user@example.com',
   action: 'approve'
@@ -67,12 +67,12 @@ console.log(result.id);  // jgd_1234567890abcd
 
 ### CLI
 ```bash
-hjs judgment create --entity user@example.com --action approve
+JEP judgment create --entity user@example.com --action approve
 ```
 
 ### Rust
 ```rust
-use hjs_core::JudgmentEvent;
+use jep_core::JudgmentEvent;
 
 let event = JudgmentEvent::new("user@example.com", "approve");
 let receipt = event.sign()?;
