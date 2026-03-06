@@ -31,7 +31,7 @@
 | [`sdk-py`](https://github.com/hjs-spec/sdk-py) | Python SDK | Python | [MIT](https://opensource.org/licenses/MIT) |
 | [`sdk-js`](https://github.com/hjs-spec/sdk-js) | JavaScript SDK | JavaScript | [MIT](https://opensource.org/licenses/MIT) |
 | [`cli`](https://github.com/hjs-spec/cli) | Command-line tool | Node.js | [MIT](https://opensource.org/licenses/MIT) |
-| [`whitepaper`](https://github.com/hjs-protocol/whitepaper) | AI Judgment Layer White Paper | PDF | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| [`whitepaper`](https://github.com/hjs-spec/whitepaper/blob/main/AI%20Judgment%20Layer.md) | AI Judgment Layer White Paper | PDF | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 ## The Four Core Primitives
 
