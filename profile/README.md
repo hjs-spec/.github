@@ -101,5 +101,5 @@ assert!(receipt.verify()?);
 
 ---
 
-**© 2026 Human Judgment Systems Foundation Ltd.**
+**© 2026 HJS Foundation Ltd.**
 ```
