@@ -55,7 +55,7 @@ print(result['id'])  # jgd_1234567890abcd
 
 ### JavaScript
 ```javascript
-import JEPClient from '@hjs/sdk-js';
+import JEPClient from '@jep/sdk-js';
 
 const client = new JEPClient({ apiKey: 'your-key' });
 const result = await client.judgment({
