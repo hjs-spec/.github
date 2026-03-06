@@ -92,7 +92,6 @@ assert!(receipt.verify()?);
 
 - **Email**: [signal@humanjudgment.org](mailto:signal@humanjudgment.org)
 - **GitHub Issues**: Use individual repository issues
-- **IETF Mailing List**: SCITT Working Group (for protocol-level discussions)
 
 ## License
 
