@@ -28,7 +28,7 @@
 | [`spec`](https://github.com/hjs-spec) | Protocol specification | Markdown | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | [`core`](https://github.com/hjs-spec/jep-core) | Reference implementation | Rust | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [`api`](https://github.com/hjs-spec/api) | Hosted API service | Node.js | [MIT](https://opensource.org/licenses/MIT) |
-| [`sdk-py`](https://github.com/hjs-protocol/sdk-py) | Python SDK | Python | [MIT](https://opensource.org/licenses/MIT) |
+| [`sdk-py`](https://github.com/hjs-spec/sdk-py) | Python SDK | Python | [MIT](https://opensource.org/licenses/MIT) |
 | [`sdk-js`](https://github.com/hjs-protocol/sdk-js) | JavaScript SDK | JavaScript | [MIT](https://opensource.org/licenses/MIT) |
 | [`cli`](https://github.com/hjs-protocol/cli) | Command-line tool | Node.js | [MIT](https://opensource.org/licenses/MIT) |
 | [`whitepaper`](https://github.com/hjs-protocol/whitepaper) | AI Judgment Layer White Paper | PDF | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
