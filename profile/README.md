@@ -1,4 +1,4 @@
-# HJS Protocol
+# JEP Protocol
 
 <p align="center">
     <a href="https://github.com/hjs-protocol">
@@ -17,7 +17,7 @@
 
 ---
 
-**HJS (Judgment Event Protocol)** is a minimal, portable protocol for recording, transferring, and verifying responsibility in AI systems. It provides cryptographic receipts for AI decisions, enabling traceable accountability across heterogeneous platforms.
+**JEP (Judgment Event Protocol)** is a minimal, portable protocol for recording, transferring, and verifying responsibility in AI systems. It provides cryptographic receipts for AI decisions, enabling traceable accountability across heterogeneous platforms.
 
  IETF [`draft-wang-hjs-judgment-event-00`](https://datatracker.ietf.org/doc/draft-wang-hjs-judgment-event/).
 
