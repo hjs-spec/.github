@@ -102,4 +102,3 @@ assert!(receipt.verify()?);
 ---
 
 **© 2026 HJS Foundation Ltd.**
-```
