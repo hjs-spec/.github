@@ -79,7 +79,7 @@ let receipt = event.sign()?;
 assert!(receipt.verify()?);
 ```
 
-## Why HJS?
+## Why JEP?
 
 - ✅ **Minimal** — Only four primitives, easy to implement
 - ✅ **Portable** — Cryptographic receipts work across any system
