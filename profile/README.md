@@ -46,7 +46,7 @@
 
 ### Python
 ```python
-from jep import HJSClient
+from jep import JEPClient
 
 client = JEPClient(api_key="your-key")
 result = client.judgment("user@example.com", "approve")
