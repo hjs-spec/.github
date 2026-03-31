@@ -19,7 +19,7 @@
 
 **JEP (Judgment Event Protocol)** is a minimal, portable protocol for recording, transferring, and verifying responsibility in AI systems. It provides cryptographic receipts for AI decisions, enabling traceable accountability across heterogeneous platforms.
 
- IETF [`draft-wang-hjs-judgment-event-00`](https://datatracker.ietf.org/doc/draft-wang-hjs-judgment-event/).
+ IETF [`draft-wang-jep-judgment-event-04`](https://datatracker.ietf.org/doc/draft-wang-jep-judgment-event-protocol/).
 
 ## Core Repositories
 
