@@ -1,51 +1,92 @@
 # HJS Spec
 
-**JEP / HJS / JAC** — a layered protocol stack for verifiable judgment events, accountability receipts, and declared dependency chains in human, organizational, software, and AI-agent systems.
+**JEP / HJS / JAC** is a layered protocol stack for recording, verifying, exporting, and composing judgment-related events across human, organizational, software, and AI-agent systems.
+
+The current public version line is:
+
+```text
+JEP v0.6
+JEP API v0.6
+HJS v0.5
+JAC v0.5
+````
 
 ---
 
-## Current Version Stack
+## What This Is
 
-| Layer | Current Draft | Current Implementation | Status |
-|---|---|---|---|
-| **JEP** | `draft-wang-jep-judgment-event-protocol-06` + Profiles + Conformance | [`jep-v06`](https://github.com/hjs-spec/jep-v06) | Current protocol core |
-| **JEP API** | JEP v0.6 API seed | [`jep-api`](https://github.com/hjs-spec/jep-api) | Current API implementation seed |
-| **HJS** | `draft-wang-hjs-accountability-05` | [`hjs-05`](https://github.com/hjs-spec/hjs-05) | Current companion implementation seed |
-| **JAC** | `draft-wang-jac-02` | [`jac-agent-02`](https://github.com/hjs-spec/jac-agent-02) | Current chain implementation seed |
+This organization maintains the current public implementation and supporting materials for:
+
+* **JEP** — Judgment Event Protocol: atomic signed judgment events;
+* **HJS** — accountability receipts, archive metadata, privacy, and evidence lifecycle;
+* **JAC** — declared dependency chains and accountability-path reconstruction;
+* **JEP API / SDKs / CLI** — implementation seeds for creating and verifying JEP-Core events.
+
+The stack is intentionally narrow and layered:
+
+```text
+JEP      = atomic signed judgment events
+JEP API  = API seed for creating and verifying JEP-Core events
+HJS      = accountability receipts and evidence lifecycle
+JAC      = declared dependency and accountability chains
+SDKs/CLI = developer access to the JEP API
+```
+
+---
+
+## Current Canonical Repositories
+
+| Repository                                                 | Role                                                                              | Status                  |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------- | ----------------------- |
+| [`jep-v06`](https://github.com/hjs-spec/jep-v06)           | JEP v0.6 draft set, profiles, conformance suite, validators, and public resources | Current protocol core   |
+| [`jep-api`](https://github.com/hjs-spec/jep-api)           | FastAPI implementation seed for creating and verifying JEP-Core events            | Current API seed        |
+| [`jep-sdk-py`](https://github.com/hjs-spec/jep-sdk-py)     | Python SDK for the JEP v0.6 API                                                   | Current SDK seed        |
+| [`jep-sdk-js`](https://github.com/hjs-spec/jep-sdk-js)     | JavaScript SDK for the JEP v0.6 API                                               | Current SDK seed        |
+| [`jep-sdk-go`](https://github.com/hjs-spec/jep-sdk-go)     | Go SDK for the JEP v0.6 API                                                       | Current SDK seed        |
+| [`jep-cli`](https://github.com/hjs-spec/jep-cli)           | CLI for creating and verifying JEP v0.6 events                                    | Current CLI seed        |
+| [`hjs-05`](https://github.com/hjs-spec/hjs-05)             | HJS v0.5 implementation seed aligned with JEP v0.6                                | Current companion layer |
+| [`jac-agent-02`](https://github.com/hjs-spec/jac-agent-02) | JAC v0.5 implementation seed aligned with JEP v0.6 and HJS v0.5                   | Current chain layer     |
 
 ---
 
 ## Public Drafts
 
-- **JEP-Core**: https://datatracker.ietf.org/doc/draft-wang-jep-judgment-event-protocol/
-- **JEP-Profiles**: https://datatracker.ietf.org/doc/draft-wang-jep-profiles/
-- **JEP-Conformance**: https://datatracker.ietf.org/doc/draft-wang-jep-conformance/
-- **HJS Accountability Receipts**: https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/
-- **JAC Declared Dependency Chains**: https://datatracker.ietf.org/doc/draft-wang-jac/
+| Draft                              | Link                                                                                                                                                 |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **JEP-Core**                       | [https://datatracker.ietf.org/doc/draft-wang-jep-judgment-event-protocol/](https://datatracker.ietf.org/doc/draft-wang-jep-judgment-event-protocol/) |
+| **JEP-Profiles**                   | [https://datatracker.ietf.org/doc/draft-wang-jep-profiles/](https://datatracker.ietf.org/doc/draft-wang-jep-profiles/)                               |
+| **JEP-Conformance**                | [https://datatracker.ietf.org/doc/draft-wang-jep-conformance/](https://datatracker.ietf.org/doc/draft-wang-jep-conformance/)                         |
+| **HJS Accountability Receipts**    | [https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/](https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/)                   |
+| **JAC Declared Dependency Chains** | [https://datatracker.ietf.org/doc/draft-wang-jac/](https://datatracker.ietf.org/doc/draft-wang-jac/)                                                 |
 
 ---
 
-## Public Implementations and Resources
+## Public Resources
 
-- **JEP v0.6 Repository**: https://github.com/hjs-spec/jep-v06
-- **JEP API v0.6 Repository**: https://github.com/hjs-spec/jep-api
-- **HJS v0.5 Repository**: https://github.com/hjs-spec/hjs-05
-- **JAC v0.5 Repository**: https://github.com/hjs-spec/jac-agent-02
-- **JEP v0.6 Spec Demo Space**: https://huggingface.co/spaces/yuqiangJEP/jep-v06-spec-demo/tree/main
-- **JEP v0.6 Conformance Suite Dataset**: https://huggingface.co/datasets/yuqiangJEP/jep-v06-conformance-suite
+| Resource                           | Link                                                                                                                                         |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| JEP v0.6 Spec Demo Space           | [https://huggingface.co/spaces/yuqiangJEP/jep-v06-spec-demo/tree/main](https://huggingface.co/spaces/yuqiangJEP/jep-v06-spec-demo/tree/main) |
+| JEP v0.6 Conformance Suite Dataset | [https://huggingface.co/datasets/yuqiangJEP/jep-v06-conformance-suite](https://huggingface.co/datasets/yuqiangJEP/jep-v06-conformance-suite) |
+
+---
+
+## Experimental and Supporting Repositories
+
+These repositories are useful, but they are not the normative protocol core.
+
+| Repository              | Role                                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------ |
+| `jep-github-action`     | GitHub workflow integration seed for generating JEP v0.6 event artifacts                   |
+| `Agent-Blackbox`        | Experimental agent trace recorder for JEP/HJS/JAC incident review and chain reconstruction |
+| `shutup-mcp`            | Experimental MCP tool-list filtering proxy                                                 |
+| `jep-papers-and-corpus` | Research papers and exploratory scenario corpus                                            |
+| `jep-eu-compliance`     | Exploratory EU AI Act mapping notes for JEP; not legal advice                              |
+
+Historical repositories such as JEP v0.4, HJS v0.4, early JAC demos, or early `spec` repositories should be treated as historical design artifacts unless explicitly marked current.
 
 ---
 
 ## Architecture
-
-The stack is intentionally layered.
-
-```text
-JEP = atomic signed judgment events
-JEP API = API seed for creating and verifying JEP-Core events
-HJS = accountability receipts, archive/privacy/evidence lifecycle
-JAC = declared dependency and accountability chains
-````
 
 ### JEP
 
@@ -60,30 +101,33 @@ JEP defines signed, verifiable events for:
 | **T** | Termination  | An actor terminated a delegation, authority, context, or reliance |
 | **V** | Verification | An actor verified something within a declared scope               |
 
-JEP-Core defines the stable event format, signatures, hashes, references, validation levels, failure codes, and extension framework.
+JEP-Core defines the event format, signatures, hashes, references, validation levels, failure codes, and extension framework.
 
 JEP-Profiles define optional interoperability with DID/VC, X.509, OAuth/OIDC, RATS, Local IAM, HJS, JAC, blockchain anchors, and AI actor contexts.
 
 JEP-Conformance defines schemas, signed vectors, invalid cases, reference validators, and conformance classes.
 
+---
+
 ### JEP API
 
-**JEP API** is a JEP v0.6 API implementation seed.
+**JEP API** is a JEP v0.6 implementation seed.
 
-It provides a small FastAPI service for:
+It demonstrates:
 
-* creating JEP-Core events;
-* verifying JEP-Core events;
-* generating JEP-style event hashes;
-* producing JEP-style validation results;
-* demonstrating Ed25519 signing and verification;
-* demonstrating detached JWS Compact Serialization shape;
-* demonstrating `ext` / `ext_crit`;
-* demonstrating TTL and digest-only privacy extensions.
+* JEP-Core event creation;
+* JEP-Core event verification;
+* JEP-style event hashes;
+* JEP-style validation results;
+* Ed25519 signing and verification;
+* detached JWS Compact Serialization shape;
+* `ext` / `ext_crit`;
+* TTL and digest-only privacy extensions.
 
 JEP API does **not** define a new protocol.
 It does **not** replace JEP-Core, JEP-Profiles, or JEP-Conformance.
-It is an implementation seed and demo service for the JEP v0.6 event layer.
+
+---
 
 ### HJS
 
@@ -102,6 +146,8 @@ HJS handles:
 * privacy-preserving export.
 
 HJS does **not** redefine JEP-Core verbs, signatures, event hashes, validation levels, or failure codes.
+
+---
 
 ### JAC
 
@@ -123,32 +169,18 @@ JAC does **not** redefine JEP-Core event format, signature semantics, event hash
 
 ---
 
-## Core Repositories
-
-| Repository                                                 | Purpose                                                                                   |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`jep-v06`](https://github.com/hjs-spec/jep-v06)           | JEP v0.6 draft set, profiles, conformance suite, validators, and public resources         |
-| [`jep-api`](https://github.com/hjs-spec/jep-api)           | JEP API v0.6 implementation seed for creating and verifying JEP-Core events               |
-| [`hjs-05`](https://github.com/hjs-spec/hjs-05)             | HJS v0.5 implementation seed aligned with `draft-wang-hjs-accountability-05` and JEP v0.6 |
-| [`jac-agent-02`](https://github.com/hjs-spec/jac-agent-02) | JAC v0.5 implementation seed aligned with `draft-wang-jac-02`, JEP v0.6, and HJS v0.5     |
-
----
-
 ## What This Stack Does
 
-The JEP / HJS / JAC stack provides infrastructure for recording, exporting, validating, and composing judgment-related events.
+The JEP / HJS / JAC stack provides infrastructure for:
 
-It is designed to support:
-
-* human accountability;
-* organizational accountability;
-* AI-agent behavior receipts;
-* delegation and termination records;
-* verification traces;
-* archive and evidence lifecycle;
-* declared dependency chains;
-* cross-system interoperability;
-* API-based creation and verification of JEP-Core events.
+* recording judgment-related events;
+* signing and verifying event artifacts;
+* exporting accountability receipts;
+* referencing evidence without exposing raw evidence;
+* representing delegation, termination, and verification traces;
+* reconstructing declared dependency chains;
+* supporting cross-system interoperability;
+* enabling SDK, CLI, API, and workflow integrations.
 
 ---
 
@@ -174,29 +206,14 @@ It does not prove legal liability.
 An HJS archive receipt proves receipt or archival metadata under a profile.
 It does not prove complete logging or factual correctness.
 
-The JEP API is a demo implementation seed.
-It does not define new protocol semantics and does not claim production-grade trust-profile coverage.
-
----
-
-## Version Boundary
-
-Current public version line:
-
-```text
-JEP v0.6
-JEP API v0.6
-HJS v0.5
-JAC v0.5
-```
-
-Older repositories such as JEP v0.4, HJS v0.4, or early JAC demos should be treated as historical design artifacts unless explicitly marked current.
+The JEP API, SDKs, CLI, and integration tools are implementation seeds.
+They do not define new protocol semantics and do not claim production-grade trust-profile coverage.
 
 ---
 
 ## Conformance and Testing
 
-JEP v0.6 includes a public conformance suite:
+JEP v0.6 includes a public conformance suite with:
 
 * JSON Schemas;
 * signed Ed25519 / JWS / JCS vectors;
@@ -233,7 +250,7 @@ The stack follows these principles:
 
 Internet-Draft documents are provided under the IETF Trust Legal Provisions and BCP 78 / BCP 79.
 
-Code, schemas, examples, validators, and test artifacts are provided under the license stated in each repository.
+Code, schemas, examples, validators, SDKs, CLI tools, and test artifacts are provided under the license stated in each repository.
 
 See individual repositories for implementation-specific licensing terms.
 
