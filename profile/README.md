@@ -9,6 +9,7 @@
 | Layer | Current Draft | Current Implementation | Status |
 |---|---|---|---|
 | **JEP** | `draft-wang-jep-judgment-event-protocol-06` + Profiles + Conformance | [`jep-v06`](https://github.com/hjs-spec/jep-v06) | Current protocol core |
+| **JEP API** | JEP v0.6 API seed | [`jep-api`](https://github.com/hjs-spec/jep-api) | Current API implementation seed |
 | **HJS** | `draft-wang-hjs-accountability-05` | [`hjs-05`](https://github.com/hjs-spec/hjs-05) | Current companion implementation seed |
 | **JAC** | `draft-wang-jac-02` | [`jac-agent-02`](https://github.com/hjs-spec/jac-agent-02) | Current chain implementation seed |
 
@@ -27,6 +28,7 @@
 ## Public Implementations and Resources
 
 - **JEP v0.6 Repository**: https://github.com/hjs-spec/jep-v06
+- **JEP API v0.6 Repository**: https://github.com/hjs-spec/jep-api
 - **HJS v0.5 Repository**: https://github.com/hjs-spec/hjs-05
 - **JAC v0.5 Repository**: https://github.com/hjs-spec/jac-agent-02
 - **JEP v0.6 Spec Demo Space**: https://huggingface.co/spaces/yuqiangJEP/jep-v06-spec-demo/tree/main
@@ -40,6 +42,7 @@ The stack is intentionally layered.
 
 ```text
 JEP = atomic signed judgment events
+JEP API = API seed for creating and verifying JEP-Core events
 HJS = accountability receipts, archive/privacy/evidence lifecycle
 JAC = declared dependency and accountability chains
 ````
@@ -62,6 +65,25 @@ JEP-Core defines the stable event format, signatures, hashes, references, valida
 JEP-Profiles define optional interoperability with DID/VC, X.509, OAuth/OIDC, RATS, Local IAM, HJS, JAC, blockchain anchors, and AI actor contexts.
 
 JEP-Conformance defines schemas, signed vectors, invalid cases, reference validators, and conformance classes.
+
+### JEP API
+
+**JEP API** is a JEP v0.6 API implementation seed.
+
+It provides a small FastAPI service for:
+
+* creating JEP-Core events;
+* verifying JEP-Core events;
+* generating JEP-style event hashes;
+* producing JEP-style validation results;
+* demonstrating Ed25519 signing and verification;
+* demonstrating detached JWS Compact Serialization shape;
+* demonstrating `ext` / `ext_crit`;
+* demonstrating TTL and digest-only privacy extensions.
+
+JEP API does **not** define a new protocol.
+It does **not** replace JEP-Core, JEP-Profiles, or JEP-Conformance.
+It is an implementation seed and demo service for the JEP v0.6 event layer.
 
 ### HJS
 
@@ -106,6 +128,7 @@ JAC does **not** redefine JEP-Core event format, signature semantics, event hash
 | Repository                                                 | Purpose                                                                                   |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | [`jep-v06`](https://github.com/hjs-spec/jep-v06)           | JEP v0.6 draft set, profiles, conformance suite, validators, and public resources         |
+| [`jep-api`](https://github.com/hjs-spec/jep-api)           | JEP API v0.6 implementation seed for creating and verifying JEP-Core events               |
 | [`hjs-05`](https://github.com/hjs-spec/hjs-05)             | HJS v0.5 implementation seed aligned with `draft-wang-hjs-accountability-05` and JEP v0.6 |
 | [`jac-agent-02`](https://github.com/hjs-spec/jac-agent-02) | JAC v0.5 implementation seed aligned with `draft-wang-jac-02`, JEP v0.6, and HJS v0.5     |
 
@@ -124,7 +147,8 @@ It is designed to support:
 * verification traces;
 * archive and evidence lifecycle;
 * declared dependency chains;
-* cross-system interoperability.
+* cross-system interoperability;
+* API-based creation and verification of JEP-Core events.
 
 ---
 
@@ -150,6 +174,9 @@ It does not prove legal liability.
 An HJS archive receipt proves receipt or archival metadata under a profile.
 It does not prove complete logging or factual correctness.
 
+The JEP API is a demo implementation seed.
+It does not define new protocol semantics and does not claim production-grade trust-profile coverage.
+
 ---
 
 ## Version Boundary
@@ -158,6 +185,7 @@ Current public version line:
 
 ```text
 JEP v0.6
+JEP API v0.6
 HJS v0.5
 JAC v0.5
 ```
