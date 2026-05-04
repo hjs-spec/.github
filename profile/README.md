@@ -215,6 +215,3 @@ See individual repositories for implementation-specific licensing terms.
 
 * **Email**: [signal@humanjudgment.org](mailto:signal@humanjudgment.org)
 * **Issues**: Use the issue tracker of the relevant repository.
-
-```
-```
