@@ -1,4 +1,4 @@
-# HJS Spec
+# JEP Spec
 
 **JEP / HJS / JAC** is a layered protocol stack for recording, verifying, exporting, and composing judgment-related events across human, organizational, software, and AI-agent systems.
 
