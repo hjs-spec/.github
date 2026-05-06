@@ -13,7 +13,7 @@ JEP / HJS / JAC is a layered protocol and runtime stack for:
 
 The stack acts as a neutral narrow-waist accountability layer between:
 
-```text
+```text id="1ffr5w"
 Human / Organization Intent
               ↓
         Agent Runtime
@@ -23,6 +23,112 @@ Human / Organization Intent
       Delegation Propagation
               ↓
       Verification and Replay
+```
+
+---
+
+# Start Here
+
+## New Developers
+
+| Repository                                                   | Purpose                                   |
+| ------------------------------------------------------------ | ----------------------------------------- |
+| [jep-quickstart](https://github.com/hjs-spec/jep-quickstart) | Five-minute developer onboarding          |
+| [jep-e2e-demo](https://github.com/hjs-spec/jep-e2e-demo)     | End-to-end replayable accountability demo |
+
+---
+
+## Runtime Core
+
+| Repository                                             | Purpose                                     |
+| ------------------------------------------------------ | ------------------------------------------- |
+| [jep-runtime](https://github.com/hjs-spec/jep-runtime) | Executable accountability runtime           |
+| [jep-api](https://github.com/hjs-spec/jep-api)         | Event creation and verification runtime API |
+| [jep-cli](https://github.com/hjs-spec/jep-cli)         | CLI tooling for replay and verification     |
+| [jep-sdk-py](https://github.com/hjs-spec/jep-sdk-py)   | Python SDK                                  |
+| [jep-sdk-js](https://github.com/hjs-spec/jep-sdk-js)   | JavaScript SDK                              |
+| [jep-sdk-go](https://github.com/hjs-spec/jep-sdk-go)   | Go SDK                                      |
+
+---
+
+## Protocol Core
+
+| Repository                                               | Purpose                                             |
+| -------------------------------------------------------- | --------------------------------------------------- |
+| [jep-v06](https://github.com/hjs-spec/jep-v06)           | JEP v0.6 protocol core                              |
+| [hjs-05](https://github.com/hjs-spec/hjs-05)             | Accountability receipt and evidence lifecycle layer |
+| [jac-agent-02](https://github.com/hjs-spec/jac-agent-02) | Delegation and dependency-chain reconstruction      |
+
+---
+
+## Runtime Integrations
+
+| Runtime / System  | Repository                                                                               |
+| ----------------- | ---------------------------------------------------------------------------------------- |
+| LangGraph         | [jep-langgraph-adapter](https://github.com/hjs-spec/jep-langgraph-adapter)               |
+| OpenAI Agents SDK | [jep-openai-agents-middleware](https://github.com/hjs-spec/jep-openai-agents-middleware) |
+| MCP Tool Runtime  | [jep-mcp-wrapper](https://github.com/hjs-spec/jep-mcp-wrapper)                           |
+| GitHub Actions    | [jep-github-action](https://github.com/hjs-spec/jep-github-action)                       |
+
+These integrations allow:
+
+* replayable execution traces
+* delegation lineage reconstruction
+* verifiable accountability propagation
+* runtime verification semantics
+* execution replay reconstruction
+
+---
+
+# Replay and Observability
+
+| Repository                                                                 | Purpose                                         |
+| -------------------------------------------------------------------------- | ----------------------------------------------- |
+| [jep-replay-visualizer](https://github.com/hjs-spec/jep-replay-visualizer) | Replay and visualize accountability lineage     |
+| [jep-lineage-explorer](https://github.com/hjs-spec/jep-lineage-explorer)   | Explore delegation propagation and ancestry     |
+| [jep-authority-runtime](https://github.com/hjs-spec/jep-authority-runtime) | Authority propagation and replay runtime        |
+| [Agent-Blackbox](https://github.com/hjs-spec/Agent-Blackbox)               | Experimental replay and incident reconstruction |
+
+---
+
+# Runtime Architecture
+
+```text id="r5u5kp"
+Human / Organization
+        ↓
+Agent Runtime
+        ↓
+JEP Runtime Middleware
+        ↓
+Judgment / Delegation Events
+        ↓
+HJS Accountability Receipts
+        ↓
+JAC Dependency and Lineage Graph
+        ↓
+Archive + Replay Verification
+```
+
+---
+
+# End-to-End Execution Flow
+
+```text id="y5gr88"
+Human
+  ↓
+OpenAI Agent
+  ↓
+MCP Tool Execution
+  ↓
+JEP Judgment Event
+  ↓
+HJS Accountability Receipt
+  ↓
+JAC Delegation Chain
+  ↓
+Archive Storage
+  ↓
+Replay Verification
 ```
 
 ---
@@ -80,103 +186,11 @@ The stack is designed for accountability replay, not just event storage.
 
 ---
 
-# Stack Overview
-
-```text
-JEP      = atomic signed judgment events
-JEP API  = event creation and verification runtime
-HJS      = accountability receipts and evidence lifecycle
-JAC      = declared dependency and delegation lineage
-Runtime  = executable accountability semantics
-SDKs     = developer integration surface
-Adapters = runtime insertion into agent ecosystems
-Replay   = accountability reconstruction and verification
-```
-
----
-
-# Runtime Architecture
-
-```text
-Human / Organization
-        ↓
-Agent Runtime
-        ↓
-JEP Runtime Middleware
-        ↓
-Judgment / Delegation Events
-        ↓
-HJS Accountability Receipts
-        ↓
-JAC Dependency and Lineage Graph
-        ↓
-Archive + Replay Verification
-```
-
----
-
-# Core Layers
-
-| Layer      | Purpose                                        |
-| ---------- | ---------------------------------------------- |
-| JEP        | Signed and replayable judgment events          |
-| HJS        | Accountability receipts and evidence lifecycle |
-| JAC        | Delegation and dependency-chain reconstruction |
-| Runtime    | Executable accountability semantics            |
-| SDKs / CLI | Developer access and integration               |
-| Adapters   | Runtime insertion into agent ecosystems        |
-| Replay     | Verification and accountability reconstruction |
-
----
-
-# Runtime Integrations
-
-JEP Runtime integrates directly into AI execution paths.
-
-| Runtime / System  | Repository                                                                               |
-| ----------------- | ---------------------------------------------------------------------------------------- |
-| LangGraph         | [jep-langgraph-adapter](https://github.com/hjs-spec/jep-langgraph-adapter)               |
-| OpenAI Agents SDK | [jep-openai-agents-middleware](https://github.com/hjs-spec/jep-openai-agents-middleware) |
-| MCP Tool Runtime  | [jep-mcp-wrapper](https://github.com/hjs-spec/jep-mcp-wrapper)                           |
-| GitHub Actions    | [jep-github-action](https://github.com/hjs-spec/jep-github-action)                       |
-
-These integrations allow:
-
-* replayable execution traces
-* delegation lineage reconstruction
-* verifiable accountability propagation
-* runtime verification semantics
-* execution replay reconstruction
-
----
-
-# End-to-End Execution Flow
-
-```text
-Human
-  ↓
-OpenAI Agent
-  ↓
-MCP Tool Execution
-  ↓
-JEP Judgment Event
-  ↓
-HJS Accountability Receipt
-  ↓
-JAC Delegation Chain
-  ↓
-Archive Storage
-  ↓
-Replay Verification
-```
-
----
-
 # Quickstart
 
 ## Install
 
-```bash
+```bash id="pmy1zb"
 pip install jep-runtime
 ```
 
@@ -184,7 +198,7 @@ pip install jep-runtime
 
 ## Minimal Example
 
-```python
+```python id="rwl3tx"
 from jep_runtime import JEPMiddleware
 
 runtime = JEPMiddleware()
@@ -211,7 +225,7 @@ Replayable accountability is a core design principle.
 
 Any archive can be replayed and verified:
 
-```bash
+```bash id="uhffgf"
 jep replay archive.jsonl
 ```
 
@@ -224,63 +238,20 @@ Verification includes:
 * tamper detection
 * replay integrity validation
 
-Replay tooling:
-
-| Repository                                                                 | Purpose                                         |
-| -------------------------------------------------------------------------- | ----------------------------------------------- |
-| [jep-replay-visualizer](https://github.com/hjs-spec/jep-replay-visualizer) | Replay and visualize accountability lineage     |
-| [jep-lineage-explorer](https://github.com/hjs-spec/jep-lineage-explorer)   | Explore delegation propagation and ancestry     |
-| [Agent-Blackbox](https://github.com/hjs-spec/Agent-Blackbox)               | Experimental replay and incident reconstruction |
-
 ---
 
-# Authority and Delegation
+# Stack Overview
 
-JEP Runtime supports replayable delegation semantics.
-
-The stack can represent:
-
-* scoped delegation
-* delegation lineage
-* authority propagation
-* delegation boundaries
-* revocation semantics
-* replay-safe ancestry reconstruction
-
-Authority runtime tooling:
-
-| Repository                                                                 | Purpose                                  |
-| -------------------------------------------------------------------------- | ---------------------------------------- |
-| [jep-authority-runtime](https://github.com/hjs-spec/jep-authority-runtime) | Authority propagation and replay runtime |
-| [jac-agent-02](https://github.com/hjs-spec/jac-agent-02)                   | Delegation and dependency reconstruction |
-
----
-
-# Current Canonical Repositories
-
-| Repository                                               | Role                                | Status  |
-| -------------------------------------------------------- | ----------------------------------- | ------- |
-| [jep-v06](https://github.com/hjs-spec/jep-v06)           | JEP v0.6 protocol core              | Current |
-| [jep-runtime](https://github.com/hjs-spec/jep-runtime)   | Executable accountability runtime   | Current |
-| [jep-api](https://github.com/hjs-spec/jep-api)           | Event creation and verification API | Current |
-| [sdk-py](https://github.com/hjs-spec/sdk-py)             | Python SDK                          | Current |
-| [sdk-js](https://github.com/hjs-spec/sdk-js)             | JavaScript SDK                      | Current |
-| [sdk-go](https://github.com/hjs-spec/sdk-go)             | Go SDK                              | Current |
-| [cli](https://github.com/hjs-spec/cli)                   | CLI tooling                         | Current |
-| [hjs-05](https://github.com/hjs-spec/hjs-05)             | Accountability receipt layer        | Current |
-| [jac-agent-02](https://github.com/hjs-spec/jac-agent-02) | Delegation and dependency chains    | Current |
-
----
-
-# Developer Onboarding
-
-Quickstart repositories:
-
-| Repository                                                   | Purpose                                      |
-| ------------------------------------------------------------ | -------------------------------------------- |
-| [jep-quickstart](https://github.com/hjs-spec/jep-quickstart) | Five-minute developer onboarding             |
-| [jep-e2e-demo](https://github.com/hjs-spec/jep-e2e-demo)     | End-to-end accountability runtime demo       |
-| [jep-vs-logging](https://github.com/hjs-spec/jep-vs-logging) | Explains replayable accountability semantics |
+```text id="n8rbw9"
+JEP      = atomic signed judgment events
+JEP API  = event creation and verification runtime
+HJS      = accountability receipts and evidence lifecycle
+JAC      = declared dependency and delegation lineage
+Runtime  = executable accountability semantics
+SDKs     = developer integration surface
+Adapters = runtime insertion into agent ecosystems
+Replay   = accountability reconstruction and verification
+```
 
 ---
 
@@ -302,6 +273,22 @@ Quickstart repositories:
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | JEP v0.6 Spec Demo Space           | [https://huggingface.co/spaces/yuqiangJEP/jep-v06-spec-demo/tree/main](https://huggingface.co/spaces/yuqiangJEP/jep-v06-spec-demo/tree/main) |
 | JEP v0.6 Conformance Suite Dataset | [https://huggingface.co/datasets/yuqiangJEP/jep-v06-conformance-suite](https://huggingface.co/datasets/yuqiangJEP/jep-v06-conformance-suite) |
+
+---
+
+# Experimental and Research Repositories
+
+| Repository                                                                             | Purpose                                           |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| [jep-vs-logging](https://github.com/hjs-spec/jep-vs-logging)                           | Explains replayable accountability semantics      |
+| [jep-architecture](https://github.com/hjs-spec/jep-architecture)                       | Runtime architecture diagrams and execution flows |
+| [shutup-mcp](https://github.com/hjs-spec/shutup-mcp)                                   | Experimental MCP filtering proxy                  |
+| [jep-papers-and-corpus](https://github.com/hjs-spec/jep-papers-and-corpus)             | Research papers and exploratory scenario corpus   |
+| [JEP-EU-AI-Act-Mapping-Notes](https://github.com/hjs-spec/JEP-EU-AI-Act-Mapping-Notes) | Exploratory EU AI Act mapping notes               |
+| [aip-judgment-sidecar](https://github.com/hjs-spec/aip-judgment-sidecar)               | Experimental sidecar runtime                      |
+| [whitepaper](https://github.com/hjs-spec/whitepaper)                                   | Whitepapers and conceptual materials              |
+
+Historical repositories (v0.4 lines and early demos) should be treated as historical design artifacts unless explicitly marked current.
 
 ---
 
@@ -355,38 +342,6 @@ The stack follows:
 * selective disclosure
 * append-only accountability chains
 * explicit trust and audience boundaries
-
----
-
-# Conformance and Testing
-
-JEP v0.6 includes:
-
-* JSON Schemas
-* signed vectors
-* invalid test cases
-* canonicalization fixtures
-* replay validation
-* conformance metadata
-* Python / TypeScript / Go validator seeds
-
-Public dataset:
-
-[https://huggingface.co/datasets/yuqiangJEP/jep-v06-conformance-suite](https://huggingface.co/datasets/yuqiangJEP/jep-v06-conformance-suite)
-
----
-
-# Experimental Repositories
-
-| Repository                                                                             | Purpose                                           |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| [shutup-mcp](https://github.com/hjs-spec/shutup-mcp)                                   | Experimental MCP filtering proxy                  |
-| [jep-papers-and-corpus](https://github.com/hjs-spec/jep-papers-and-corpus)             | Research papers and exploratory scenario corpus   |
-| [JEP-EU-AI-Act-Mapping-Notes](https://github.com/hjs-spec/JEP-EU-AI-Act-Mapping-Notes) | Exploratory EU AI Act mapping notes               |
-| [aip-judgment-sidecar](https://github.com/hjs-spec/aip-judgment-sidecar)               | Experimental sidecar runtime                      |
-| [jep-architecture](https://github.com/hjs-spec/jep-architecture)                       | Runtime architecture diagrams and execution flows |
-
-Historical repositories (v0.4 lines and early demos) should be treated as historical design artifacts unless explicitly marked current.
 
 ---
 
