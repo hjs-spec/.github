@@ -182,7 +182,7 @@ JEP events are:
 * delegation-aware
 * portability-oriented
 
-The stack is designed for accountability replay, not just event storage.
+The stack is designed to enable replayable accountability semantics, not just event storage.
 
 ---
 
