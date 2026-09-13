@@ -51,7 +51,6 @@ Each runtime has its own supported envelope and verification scope; a successful
 | [Agent-Blackbox](https://github.com/hjs-spec/Agent-Blackbox) | Experimental incident reconstruction |
 | [jep-vs-logging](https://github.com/hjs-spec/jep-vs-logging) | Local hash-envelope illustration, not Core conformance |
 | [jep-papers-and-corpus](https://github.com/hjs-spec/jep-papers-and-corpus) | Research materials |
-| [JEP-EU-AI-Act-Mapping-Notes](https://github.com/hjs-spec/JEP-EU-AI-Act-Mapping-Notes) | Exploratory mapping notes |
 | [whitepaper](https://github.com/hjs-spec/whitepaper) | Conceptual materials |
 
 Old mocks and frozen comparison baselines retain their historical formats. They are not silently migrated into current protocol evidence.
