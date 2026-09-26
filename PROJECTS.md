@@ -24,7 +24,7 @@ These projects have their own envelopes, storage contracts or verification scope
 
 | Repository | Responsibility |
 |---|---|
-| [HJS draft](https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/) | Archive/receipt/privacy companion; historical `hjs-spec/hjs-05` source URL returned 404 on 2026-09-26, so current source availability is unconfirmed |
+| [HJS draft](https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/) | Archive/receipt/privacy companion; the owner confirmed deletion of `hjs-spec/hjs-05` on 2026-09-26; historical citations remain in release records |
 | [jac-agent-02](https://github.com/hjs-spec/jac-agent-02) | JAC declarations and fragment checks |
 | [jep-runtime](https://github.com/hjs-spec/jep-runtime) | Local execution/replay envelope; signed Core wire events belong to SDK/API |
 | [jep-langgraph-adapter](https://github.com/hjs-spec/jep-langgraph-adapter) | Runtime integration for LangGraph |
