@@ -21,6 +21,7 @@ Choose **HTTP** when a service owns signing and acceptance state. Choose **local
 | HTTP client | [sdk-go](https://github.com/hjs-spec/sdk-go) | Go client |
 | HTTP client | [cli](https://github.com/hjs-spec/cli) | Command-line client |
 | Local recording | [jep-agent-sdk](https://github.com/hjs-spec/jep-agent-sdk) | Signed Core 0.7 agent records, local verification and reports |
+| Completion binding | [tsto-spec](https://github.com/cognitive-emergence/tsto-spec) | TSTO/00 + JEP Core 0.7 + experimental Binding/02; completion policy stays with the application |
 
 `sdk-py` calls a service; `jep-agent-sdk` records locally. They are different interfaces, not two competing protocol definitions. Local acceptance is single-process; use the API with shared PostgreSQL state when acceptance must span hosts.
 
@@ -72,5 +73,7 @@ HJS documentation is available at the [public draft](https://datatracker.ietf.or
 4. Keep existing package names and commands stable. Merge implementation code only after format compatibility and a consumer migration path are proven.
 5. Preserve published drafts, signed artifacts and research baselines. Code fixes receive new software releases; documentation-only changes need no package version.
 6. Add capability to its existing owner before creating a repository. [Portable evidence](https://github.com/hjs-spec/jep-core/blob/main/docs/decisions/portable-evidence-repository.md) starts in the SDK.
+
+[Current interoperability checks](https://github.com/hjs-spec/jep-core/tree/main/integration#current-core-07--binding02) verify signed artifacts across Core, clients, API and local recorders.
 
 [Delivery status](DELIVERY-2026-09-26.md) distinguishes GitHub releases, registries, containers and live deployments. [Consolidation provenance](https://github.com/hjs-spec/jep-core/blob/main/docs/REPOSITORY-CONSOLIDATION-2026-09.md) records the documentation move.
