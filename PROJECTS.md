@@ -1,45 +1,66 @@
-# Project and resource index
+# Project directory
 
-For the protocol, SDKs, API, and a local quickstart, start at the [organization homepage](https://github.com/hjs-spec). This index covers additional integrations and materials; inclusion does not imply the same format or verification support across projects.
+Use the [four starting points](https://github.com/hjs-spec) first. This directory is the single organization-wide navigation index; protocol definitions stay in **jep-core**, and examples must identify their actual format.
 
-## Runtime integrations and tools
+## Current Core 0.7 path
 
-| Integration or task | Repository |
+| Repository | Responsibility |
 |---|---|
-| LangGraph | [jep-langgraph-adapter](https://github.com/hjs-spec/jep-langgraph-adapter) |
-| OpenAI Agents | [jep-openai-agents-middleware](https://github.com/hjs-spec/jep-openai-agents-middleware) |
-| Model Context Protocol | [jep-mcp-wrapper](https://github.com/hjs-spec/jep-mcp-wrapper) |
-| GitHub Actions | [jep-github-action](https://github.com/hjs-spec/jep-github-action) |
-| Runtime envelopes and replay | [jep-runtime](https://github.com/hjs-spec/jep-runtime) |
-| Application authority checks | [jep-authority-runtime](https://github.com/hjs-spec/jep-authority-runtime) |
-| Archive visualization | [jep-replay-visualizer](https://github.com/hjs-spec/jep-replay-visualizer) |
-| Declared lineage exploration | [jep-lineage-explorer](https://github.com/hjs-spec/jep-lineage-explorer) |
+| [jep-core](https://github.com/hjs-spec/jep-core) | Normative source, frozen published drafts, current schemas/vectors and reference validator; explicit legacy tools |
+| [jep-quickstart](https://github.com/hjs-spec/jep-quickstart) | Default local onboarding: real SDK/API signing and archival replay |
+| [sdk-py](https://github.com/hjs-spec/sdk-py) | Python HTTP client |
+| [sdk-js](https://github.com/hjs-spec/sdk-js) | JavaScript HTTP client; check Releases for downloadable tarballs and registry availability |
+| [sdk-go](https://github.com/hjs-spec/sdk-go) | Go HTTP client |
+| [jep-api](https://github.com/hjs-spec/jep-api) | Reference service, signing/storage providers and acceptance state |
+| [cli](https://github.com/hjs-spec/cli) | Command-line HTTP client |
+| [jep-agent-sdk](https://github.com/hjs-spec/jep-agent-sdk) | Local agent recorder, current event verification, adapters and reports; historical formats require explicit support |
+| [Agent-Blackbox](https://github.com/hjs-spec/Agent-Blackbox) | Alpha trace recorder and incident review; fresh Core 0.7 events, explicit historical preservation |
 
-Consult each repository's supported formats, verification scope, and migration instructions before combining integrations or replaying existing archives.
+Release numbers are software versions. They do not rename the protocol. Check a component's documented verification scope before combining it with another component.
 
-## Companion implementation boundaries
+## Companion implementations and integrations
 
-- [HJS](https://github.com/hjs-spec/hjs-05): receipts bind metadata to event hashes. Receipt validation alone does not verify event signatures, durable retention, or enforcement of a privacy policy.
-- [JAC](https://github.com/hjs-spec/jac-agent-02): declaration and fragment-hash checks do not authenticate referenced parents or establish real-world causality or complete logging.
+These projects have their own envelopes, storage contracts or verification scopes. Inclusion here does not imply full Core 0.7, HJS or JAC conformance.
 
-Companion extensions preserve JEP-Core's event, signature, and hash semantics. Critical extensions require a verifier that implements their semantics. Stronger guarantees require the corresponding profiles, evidence, trust configuration, and validation logic.
-
-## Research, experiments, and historical implementations
-
-| Resource | Scope |
+| Repository | Responsibility |
 |---|---|
-| [Whitepaper](https://github.com/hjs-spec/whitepaper) | Conceptual architecture and historical development |
-| [Papers and corpus](https://github.com/hjs-spec/jep-papers-and-corpus) | Research materials and exploratory scenarios |
-| [Agent SDK](https://github.com/hjs-spec/jep-agent-sdk) | Historical JEP-04/JAC-01 implementation, distinct from the current language SDKs |
-| [Judgment Sidecar](https://github.com/hjs-spec/aip-judgment-sidecar) | Independent signed-receipt prototype |
-| [Agent Blackbox](https://github.com/hjs-spec/Agent-Blackbox) | Experimental incident reconstruction |
+| [hjs-05](https://github.com/hjs-spec/hjs-05) | HJS archive, receipt and privacy companion; preserves historical signed assets |
+| [jac-agent-02](https://github.com/hjs-spec/jac-agent-02) | JAC declarations and fragment checks |
+| [jep-runtime](https://github.com/hjs-spec/jep-runtime) | Local execution/replay envelope; signed Core wire events belong to SDK/API |
+| [jep-langgraph-adapter](https://github.com/hjs-spec/jep-langgraph-adapter) | Runtime integration for LangGraph |
+| [jep-openai-agents-middleware](https://github.com/hjs-spec/jep-openai-agents-middleware) | Runtime integration for OpenAI Agents |
+| [jep-mcp-wrapper](https://github.com/hjs-spec/jep-mcp-wrapper) | Runtime integration for MCP |
+| [jep-authority-runtime](https://github.com/hjs-spec/jep-authority-runtime) | Application authority checks and explicit policy |
+| [jep-github-action](https://github.com/hjs-spec/jep-github-action) | Existing action and its explicitly versioned validation contract |
+| [aip-judgment-sidecar](https://github.com/hjs-spec/aip-judgment-sidecar) | Independent signed-receipt experiment |
+| [shutup-mcp](https://github.com/hjs-spec/shutup-mcp) | Independent experimental MCP tool |
 
-Historical signed records, examples, and frozen comparison baselines retain their original formats. Follow explicit compatibility instructions when reading them.
+Receipt validation alone does not authenticate event signatures or prove retention. Declared dependency checks do not prove causality or completeness. Unsupported critical extensions must not be silently treated as understood.
 
-## Drafts and public resources
+## Tools, explanations and preserved baselines
 
-- **JEP drafts:** [Core](https://datatracker.ietf.org/doc/draft-wang-jep-judgment-event-protocol/) · [Profiles](https://datatracker.ietf.org/doc/draft-wang-jep-profiles/) · [Conformance](https://datatracker.ietf.org/doc/draft-wang-jep-conformance/)
-- **Companion drafts:** [HJS](https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/) · [JAC](https://datatracker.ietf.org/doc/draft-wang-jac/)
-- **Hugging Face:** [Specification demo](https://huggingface.co/spaces/yuqiangJEP/jep-v06-spec-demo) · [Conformance dataset](https://huggingface.co/datasets/yuqiangJEP/jep-v06-conformance-suite)
+| Repository | Responsibility |
+|---|---|
+| [jep-replay-visualizer](https://github.com/hjs-spec/jep-replay-visualizer) | Archive visualization; consult supported envelope formats |
+| [jep-lineage-explorer](https://github.com/hjs-spec/jep-lineage-explorer) | Declared lineage visualization |
+| [jep-claude-replay](https://github.com/hjs-spec/jep-claude-replay) | Specific replay integration |
+| [jep-architecture](https://github.com/hjs-spec/jep-architecture) | Explanatory diagrams; no new normative schemas |
+| [jep-vs-logging](https://github.com/hjs-spec/jep-vs-logging) | Conceptual comparison |
+| [jep-e2e-demo](https://github.com/hjs-spec/jep-e2e-demo) | Preserved Core 0.6 end-to-end demonstration; use Quickstart for current onboarding |
+| [jep-hjs-odr-boundary-test-01](https://github.com/hjs-spec/jep-hjs-odr-boundary-test-01) | Frozen comparison/evidence baseline |
+| [whitepaper](https://github.com/hjs-spec/whitepaper) | Conceptual and historical materials |
+| [jep-papers-and-corpus](https://github.com/hjs-spec/jep-papers-and-corpus) | Research and corpus materials |
+| [.github](https://github.com/hjs-spec/.github) | Organization homepage and this directory |
 
-Hosted resources may lag repository changes; check their revision before using them as implementation evidence. Current delivery status is linked from the organization homepage.
+## Maintenance rules
+
+- Keep one current onboarding path; link to it rather than copying another quickstart.
+- Keep protocol definitions, schemas and conformance vectors in jep-core. Downstream copies identify their source revision.
+- Keep package releases independent where public imports, commands or dependencies differ. Avoid repository renames or mergers that break existing consumers.
+- Absorb useful pending changes, then close superseded PRs. Do not merge obsolete version rollbacks or duplicate validators merely to clear the queue.
+- Publish new immutable versions for changed software. Verify VERSION, package metadata and built artifacts agree; workflow edits alone must not trigger a new release.
+- Preserve published drafts, historical signatures and frozen baselines. A new protocol revision is separate from a software repair release.
+
+## Public drafts
+
+[JEP Core](https://datatracker.ietf.org/doc/draft-wang-jep-judgment-event-protocol/) · [Profiles](https://datatracker.ietf.org/doc/draft-wang-jep-profiles/) · [Conformance](https://datatracker.ietf.org/doc/draft-wang-jep-conformance/) · [HJS](https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/) · [JAC](https://datatracker.ietf.org/doc/draft-wang-jac/)
