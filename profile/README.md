@@ -15,4 +15,4 @@ Current protocol: **Core 0.7**, wire major `jep: "1"`. Software versions are ind
 
 [Repository directory](https://github.com/hjs-spec/.github/blob/main/PROJECTS.md) · [Architecture and format boundaries](https://github.com/hjs-spec/jep-core/tree/main/docs/architecture) · [Delivery status](https://github.com/hjs-spec/.github/blob/main/DELIVERY-2026-09-26.md)
 
-HJS (archive/evidence lifecycle) and JAC (declared dependencies) are optional companions. Runtime experiments and visual tools have their own contracts; they are not required to start using Core.
+HJS (archive/evidence lifecycle) and JAC (declared dependencies) are optional companions. Retired runtime, replay and observation experiments remain available for reproduction; new signed recording and reports are maintained in the Agent SDK.
