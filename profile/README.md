@@ -24,3 +24,5 @@ The published Internet-Draft -07 is frozen. Historical formats are read through 
 [HJS](https://github.com/hjs-spec/hjs-05) covers archive/evidence lifecycle; [JAC](https://github.com/hjs-spec/jac-agent-02) covers declared dependency chains. They are optional companion work, not sequential Core authorization gates.
 
 Use each repository's **Releases** page for immutable downloads and its Actions page for the tested revision. A source release, package-registry upload, container image and live deployment are distinct delivery results; a hosted demo may lag the source.
+
+[Verified delivery status — 2026-09-26](https://github.com/hjs-spec/.github/blob/main/DELIVERY-2026-09-26.md) lists published versions, downloads and remaining registry/deployment configuration.
