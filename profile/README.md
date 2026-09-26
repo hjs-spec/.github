@@ -19,9 +19,9 @@ The published Internet-Draft -07 is frozen. Historical formats are read through 
 
 ## Find the rest
 
-[Project directory](https://github.com/hjs-spec/.github/blob/main/PROJECTS.md) lists companion implementations, integrations, visual tools, research and historical baselines. [Architecture](https://github.com/hjs-spec/jep-architecture) explains their boundaries.
+[Project directory](https://github.com/hjs-spec/.github/blob/main/PROJECTS.md) lists companion implementations, integrations, visual tools, research and historical baselines. [Architecture](https://github.com/hjs-spec/jep-core/tree/main/docs/architecture) explains their boundaries.
 
-[HJS](https://github.com/hjs-spec/hjs-05) covers archive/evidence lifecycle; [JAC](https://github.com/hjs-spec/jac-agent-02) covers declared dependency chains. They are optional companion work, not sequential Core authorization gates.
+[HJS](https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/) covers archive/evidence lifecycle; [JAC](https://github.com/hjs-spec/jac-agent-02) covers declared dependency chains. They are optional companion work, not sequential Core authorization gates.
 
 Use each repository's **Releases** page for immutable downloads and its Actions page for the tested revision. A source release, package-registry upload, container image and live deployment are distinct delivery results; a hosted demo may lag the source.
 
