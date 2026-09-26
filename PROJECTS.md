@@ -24,7 +24,7 @@ These projects have their own envelopes, storage contracts or verification scope
 
 | Repository | Responsibility |
 |---|---|
-| [hjs-05](https://github.com/hjs-spec/hjs-05) | HJS archive, receipt and privacy companion; preserves historical signed assets |
+| [HJS draft](https://datatracker.ietf.org/doc/draft-wang-hjs-accountability/) | Archive/receipt/privacy companion; the owner confirmed deletion of `hjs-spec/hjs-05` on 2026-09-26; historical citations remain in release records |
 | [jac-agent-02](https://github.com/hjs-spec/jac-agent-02) | JAC declarations and fragment checks |
 | [jep-runtime](https://github.com/hjs-spec/jep-runtime) | Local execution/replay envelope; signed Core wire events belong to SDK/API |
 | [jep-langgraph-adapter](https://github.com/hjs-spec/jep-langgraph-adapter) | Runtime integration for LangGraph |
@@ -44,13 +44,15 @@ Receipt validation alone does not authenticate event signatures or prove retenti
 | [jep-replay-visualizer](https://github.com/hjs-spec/jep-replay-visualizer) | Archive visualization; consult supported envelope formats |
 | [jep-lineage-explorer](https://github.com/hjs-spec/jep-lineage-explorer) | Declared lineage visualization |
 | [jep-claude-replay](https://github.com/hjs-spec/jep-claude-replay) | Specific replay integration |
-| [jep-architecture](https://github.com/hjs-spec/jep-architecture) | Explanatory diagrams; no new normative schemas |
-| [jep-vs-logging](https://github.com/hjs-spec/jep-vs-logging) | Conceptual comparison |
-| [jep-e2e-demo](https://github.com/hjs-spec/jep-e2e-demo) | Preserved Core 0.6 end-to-end demonstration; use Quickstart for current onboarding |
+| [Architecture in Core](https://github.com/hjs-spec/jep-core/tree/main/docs/architecture) | Maintained explanatory diagrams; [old repository](https://github.com/hjs-spec/jep-architecture) retired to historical links |
+| [Logging comparison in Core](https://github.com/hjs-spec/jep-core/blob/main/docs/comparisons/logging.md) | Maintained explanation and preserved unsigned example; [old repository](https://github.com/hjs-spec/jep-vs-logging) retired |
+| [jep-e2e-demo](https://github.com/hjs-spec/jep-e2e-demo) | Retired Core 0.6 demonstration with preserved releases; use Quickstart for current onboarding |
 | [jep-hjs-odr-boundary-test-01](https://github.com/hjs-spec/jep-hjs-odr-boundary-test-01) | Frozen comparison/evidence baseline |
 | [whitepaper](https://github.com/hjs-spec/whitepaper) | Conceptual and historical materials |
 | [jep-papers-and-corpus](https://github.com/hjs-spec/jep-papers-and-corpus) | Research and corpus materials |
 | [.github](https://github.com/hjs-spec/.github) | Organization homepage and this directory |
+
+The [consolidation record](https://github.com/hjs-spec/jep-core/blob/main/docs/REPOSITORY-CONSOLIDATION-2026-09.md) records source revisions and the distinction between retired maintenance and GitHub's archive setting. The [portable evidence decision](https://github.com/hjs-spec/jep-core/blob/main/docs/decisions/portable-evidence-repository.md) explains why no extra credential repository is created yet.
 
 ## Maintenance rules
 
