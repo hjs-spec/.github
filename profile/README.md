@@ -1,28 +1,26 @@
-# Judgment Event Protocol (JEP)
+# JEP · Judgment Event Protocol
 
-A signed event format for recording **Judgment, Delegation, Termination, and Verification** (`J`, `D`, `T`, `V`) across human, organizational, software, and AI-agent systems.
+Signed statements of **Judgment (J), Delegation (D), Termination (T), and Verification (V)**.
+
+The current protocol is **JEP Core 0.7**, wire major `jep: "1"`. Software package versions are independent of the protocol version.
 
 ## Start here
 
-| Your goal | Entry point |
+| Goal | Canonical entry |
 |---|---|
-| Understand the protocol | [JEP-Core-0.6 specification](https://github.com/hjs-spec/jep-v06) |
-| Run an example | [Local quickstart](https://github.com/hjs-spec/jep-quickstart) · [End-to-end demo](https://github.com/hjs-spec/jep-e2e-demo) |
-| Integrate an application | [Python](https://github.com/hjs-spec/sdk-py) · [JavaScript / TypeScript](https://github.com/hjs-spec/sdk-js) · [Go](https://github.com/hjs-spec/sdk-go) · [API](https://github.com/hjs-spec/jep-api) · [CLI](https://github.com/hjs-spec/cli) |
-| Check implementation evidence | [Validators and test vectors](https://github.com/hjs-spec/jep-v06#conformance-implementations) · [Release and verification record](https://github.com/hjs-spec/jep-v06/blob/main/docs/RELEASE-DELIVERY-2026-09.md) |
+| Read the protocol or run conformance checks | [jep-core](https://github.com/hjs-spec/jep-core) |
+| Run a signed tool call and replay it locally | [jep-quickstart](https://github.com/hjs-spec/jep-quickstart) |
+| Connect an application | [Python](https://github.com/hjs-spec/sdk-py) · [JavaScript](https://github.com/hjs-spec/sdk-js) · [Go](https://github.com/hjs-spec/sdk-go) · [API](https://github.com/hjs-spec/jep-api) · [CLI](https://github.com/hjs-spec/cli) |
+| Add agent recording and reports | [jep-agent-sdk](https://github.com/hjs-spec/jep-agent-sdk) |
 
-**Current baseline:** JEP-Core-0.6, wire version `"jep": "1"`; software versions are separate. The API provides Level 1 structure and cryptographic verification. Use the local setup to evaluate current code. The JavaScript SDK is distributed through a GitHub release tarball; npm publication and hosted API/Hugging Face updates remain deferred.
+Core 0.7 uses Event Identity `(who,id)` for stable identity and Event Hash for an exact signed artifact. Validation reports independent checks and `valid`, `invalid`, or `indeterminate`. A valid signature does not establish truth, authority, legal effect, causality, or complete logging.
 
-## Companion layers and other projects
+The published Internet-Draft -07 is frozen. Historical formats are read through explicit compatibility paths; failed current validation never selects a legacy decoder automatically.
 
-[HJS](https://github.com/hjs-spec/hjs-05) provides archive receipts and privacy/lifecycle metadata. [JAC](https://github.com/hjs-spec/jac-agent-02) records declared dependencies. See the [architecture overview](https://github.com/hjs-spec/jep-architecture) for their relationship to JEP.
+## Find the rest
 
-The [project and resource index](https://github.com/hjs-spec/.github/blob/main/PROJECTS.md) lists runtime integrations, research, historical implementations, public drafts, and Hugging Face resources.
+[Project directory](https://github.com/hjs-spec/.github/blob/main/PROJECTS.md) lists companion implementations, integrations, visual tools, research and historical baselines. [Architecture](https://github.com/hjs-spec/jep-architecture) explains their boundaries.
 
-## Verification scope
+[HJS](https://github.com/hjs-spec/hjs-05) covers archive/evidence lifecycle; [JAC](https://github.com/hjs-spec/jac-agent-02) covers declared dependency chains. They are optional companion work, not sequential Core authorization gates.
 
-Results describe completed checks under the selected trust configuration. Signature validity alone does not establish identity, authorization, truth, legal liability, or complete logging. HJS metadata does not prove durable retention; JAC declarations do not prove causality. See each implementation's validation scope before relying on its results.
-
-For interoperability reports, include the implementation version, validation profile, input, and observed result in the relevant repository's issue tracker.
-
-Contact: [signal@humanjudgment.org](mailto:signal@humanjudgment.org)
+Use each repository's **Releases** page for immutable downloads and its Actions page for the tested revision. A source release, package-registry upload, container image and live deployment are distinct delivery results; a hosted demo may lag the source.
