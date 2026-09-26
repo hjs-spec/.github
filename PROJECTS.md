@@ -27,20 +27,12 @@ Choose **HTTP** when a service owns signing and acceptance state. Choose **local
 
 ## Optional components
 
-These components are independent experiments or companion implementations. A common J/D/T/V vocabulary or JSONL extension does **not** make their formats interchangeable. Check the [format matrix](https://github.com/hjs-spec/jep-core/blob/main/docs/architecture/architecture-notes.md#format-and-verification-matrix) before connecting them.
+These retained components are optional companions, independent experiments or explicitly historical integrations. A common J/D/T/V vocabulary or JSONL extension does **not** make their formats interchangeable. Check the [format matrix](https://github.com/hjs-spec/jep-core/blob/main/docs/architecture/architecture-notes.md#format-and-verification-matrix) before connecting them.
 
 | Repository | Purpose / boundary |
 |---|---|
 | [Agent-Blackbox](https://github.com/hjs-spec/Agent-Blackbox) | Alpha incident recorder; Core 0.7-style events with local JAC/HJS conventions |
 | [jac-agent-02](https://github.com/hjs-spec/jac-agent-02) | JAC declarations and fragment checks; pinned historical demo events |
-| [jep-runtime](https://github.com/hjs-spec/jep-runtime) | Local policy/replay experiment; own envelope and mock signatures |
-| [jep-langgraph-adapter](https://github.com/hjs-spec/jep-langgraph-adapter) | LangGraph observation; own unsigned archive format |
-| [jep-openai-agents-middleware](https://github.com/hjs-spec/jep-openai-agents-middleware) | Agents SDK observation; own unsigned archive format |
-| [jep-mcp-wrapper](https://github.com/hjs-spec/jep-mcp-wrapper) | MCP callable observation; own unsigned archive format |
-| [jep-authority-runtime](https://github.com/hjs-spec/jep-authority-runtime) | Declared authority policy model; no Core signature verification |
-| [jep-replay-visualizer](https://github.com/hjs-spec/jep-replay-visualizer) | Browser projection of supplied records; no cryptographic verification |
-| [jep-lineage-explorer](https://github.com/hjs-spec/jep-lineage-explorer) | Declared lineage and scope checks; no cryptographic verification |
-| [jep-claude-replay](https://github.com/hjs-spec/jep-claude-replay) | Claude transcript/replay prototype; own signatures and `.jcrpack` format |
 | [jep-github-action](https://github.com/hjs-spec/jep-github-action) | Historical Core 0.6 workflow integration; not the current onboarding path |
 | [aip-judgment-sidecar](https://github.com/hjs-spec/aip-judgment-sidecar) | Independent AIP receipt format and policy hook |
 | [shutup-mcp](https://github.com/hjs-spec/shutup-mcp) | Independent MCP tool filtering experiment |
@@ -53,9 +45,31 @@ These components are independent experiments or companion implementations. A com
 | [jep-papers-and-corpus](https://github.com/hjs-spec/jep-papers-and-corpus) | Versioned research and exploratory corpus; not a conformance suite |
 | [.github](https://github.com/hjs-spec/.github) | Organization homepage, this directory and delivery records |
 
-## Archived repositories
+## Retired experiments
 
-All three were set read-only on 2026-09-26. Original histories and releases remain available.
+These eight repositories left active development on 2026-09-26 and are retained
+read-only for reproduction. Their original formats, readers, releases and histories
+remain available. New signed recording and reports belong to the
+[Agent SDK](https://github.com/hjs-spec/jep-agent-sdk/blob/main/docs/INTEGRATIONS.md).
+That guide lists capability gaps and the original reader required for each archive;
+it does not promise automatic migration or equivalent framework hooks.
+
+| Repository | Preserved capability / boundary |
+|---|---|
+| [jep-runtime](https://github.com/hjs-spec/jep-runtime) | Local policy/replay experiment; own envelope and mock signatures |
+| [jep-langgraph-adapter](https://github.com/hjs-spec/jep-langgraph-adapter) | LangGraph observation; own unsigned archive format |
+| [jep-openai-agents-middleware](https://github.com/hjs-spec/jep-openai-agents-middleware) | Agents SDK observation; own unsigned archive format |
+| [jep-mcp-wrapper](https://github.com/hjs-spec/jep-mcp-wrapper) | MCP callable observation; own unsigned archive format |
+| [jep-authority-runtime](https://github.com/hjs-spec/jep-authority-runtime) | Declared authority policy model; no Core signature verification |
+| [jep-replay-visualizer](https://github.com/hjs-spec/jep-replay-visualizer) | Browser projection of supplied records; no cryptographic verification |
+| [jep-lineage-explorer](https://github.com/hjs-spec/jep-lineage-explorer) | Declared lineage and scope checks; no cryptographic verification |
+| [jep-claude-replay](https://github.com/hjs-spec/jep-claude-replay) | Claude transcript/replay prototype; own signatures and `.jcrpack` format |
+
+[Consolidation decision and evidence](CONSOLIDATION-2026-09-26.md).
+
+## Earlier documentation archives
+
+These three were set read-only in the earlier consolidation on 2026-09-26. Original histories and releases remain available.
 
 | Archived repository | Maintained destination |
 |---|---|
@@ -72,7 +86,8 @@ HJS documentation is available at the [public draft](https://datatracker.ietf.or
 3. Every component states its format and actual verification scope. Never infer Core conformance from a name or a successful local replay.
 4. Keep existing package names and commands stable. Merge implementation code only after format compatibility and a consumer migration path are proven.
 5. Preserve published drafts, signed artifacts and research baselines. Code fixes receive new software releases; documentation-only changes need no package version.
-6. Add capability to its existing owner before creating a repository. [Portable evidence](https://github.com/hjs-spec/jep-core/blob/main/docs/decisions/portable-evidence-repository.md) starts in the SDK.
+6. Keep retired experiments outside the active feature roadmap. Reopening requires a concrete consumer, a named format and a maintenance owner.
+7. Add capability to its existing owner before creating a repository. [Portable evidence](https://github.com/hjs-spec/jep-core/blob/main/docs/decisions/portable-evidence-repository.md) starts in the SDK.
 
 [Current interoperability checks](https://github.com/hjs-spec/jep-core/tree/main/integration#current-core-07--binding02) verify signed artifacts across Core, clients, API and local recorders.
 
