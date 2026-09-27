@@ -39,10 +39,10 @@ For minimum maintenance, redirect retired routes to the accurate protocol or arc
 
 The current GitHub connection's accessible repository inventory and scoped code searches did not identify the website source repository. That does not prove no source exists. Do not edit Prooftask, an unrelated app or a guessed repository as a substitute.
 
-The public responses identify Vercel as the host. The Vercel connector is available but was not connected in this session; connecting the account that owns humanjudgment.org, or exposing the exact site repository, is the remaining access prerequisite for a real source/deployment fix. No new hosting account, paid plan, API database or published package is needed.
+The public responses identify Vercel as the host. After the owner installed Vercel at 06:16 UTC, plugin discovery confirmed `installed: true`. However, action discovery still returned no Vercel namespace, project-reading action or deployment action in this session. This is a tool-exposure limitation, not evidence that the owner failed to install or authorize it. Do not ask the owner to repeat installation or share a token. When project actions become available, resolve the existing humanjudgment.org deployment and its source before making changes. An exact accessible source repository would also resolve source access. No new hosting account, paid plan, API database or package publication is needed.
 
 ## Completion boundary
 
-The audit is complete for the named HTTP observations. Website changes are **not deployed**. A successful audit workflow means evidence was collected, not that every route conforms. After access is provided, change the identified site source, preserve the current 0.7 pages, deploy to that existing project, and rerun the same fixed-route check. Verify both domain forms and intended routes before requesting search re-indexing. Do not treat stale search extracts as the current source of truth.
+The audit is complete for the named HTTP observations. Website changes are **not deployed**. A successful audit workflow means evidence was collected, not that every route conforms. After project/source access is available, change the identified site source, preserve the current 0.7 pages, deploy to that existing project, and rerun the same fixed-route check. Verify both domain forms and intended routes before requesting search re-indexing. Do not treat stale search extracts as the current source of truth.
 
 [Current delivery](DELIVERY-CURRENT.md) · [Owner handoff](CONFIGURATION-HANDOFF-2026-09-27.md).
