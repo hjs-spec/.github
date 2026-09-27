@@ -1,13 +1,14 @@
 # Repository directory
 
-One protocol source, one runnable introduction, and an integration chosen for your application. This is the organization-wide directory; component READMEs describe their own interfaces.
+One protocol source, a no-API local introduction, and an explicit HTTP alternative. This is the organization-wide directory; component READMEs describe their own interfaces.
 
 ## Start
 
 | Repository | Responsibility |
 |---|---|
 | [jep-core](https://github.com/hjs-spec/jep-core) | Core specification, schemas, conformance vectors and reference validators |
-| [jep-quickstart](https://github.com/hjs-spec/jep-quickstart) | Default local introduction: create a signed event and verify its archive |
+| [jep-agent-sdk](https://github.com/hjs-spec/jep-agent-sdk#local-create--export--independent-verification) | Default local introduction: create, export and independently verify a signed event; no API required |
+| [jep-quickstart](https://github.com/hjs-spec/jep-quickstart) | HTTP alternative: run a local API, then create and verify through a client |
 
 ## Integrate
 
@@ -104,7 +105,7 @@ HJS documentation is available at the [public draft](https://datatracker.ietf.or
 ## Maintenance rules
 
 1. Protocol definitions, schemas and conformance vectors live in Core. Downstream copies pin their source revision.
-2. New users follow Quickstart. Other repositories link to it instead of copying a full onboarding stack.
+2. New users start with the Agent SDK local example or explicitly choose HTTP Quickstart. Other repositories link to these paths instead of copying an onboarding stack.
 3. Every component states its format and actual verification scope. Never infer Core conformance from a name or a successful local replay.
 4. Keep existing package names and commands stable. Merge implementation code only after format compatibility and a consumer migration path are proven.
 5. Preserve published drafts, signed artifacts and research baselines. Code fixes receive new software releases; documentation-only changes need no package version.
