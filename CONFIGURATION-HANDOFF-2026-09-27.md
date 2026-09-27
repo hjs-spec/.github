@@ -2,27 +2,51 @@
 
 日期：2026-09-27。Core 的 PyPI 授权与发布已经完成；不要再次上传、删除旧包或新建 PyPI Token。本轮开发与发行验收见 [交付记录](DELIVERY-2026-09-27.md)。
 
-## 1．npm 发布授权
+## 1．npm 首次发布及自动发布授权（命名空间更新）
 
-用途：让 JavaScript SDK 可通过 npm 安装；它不阻塞 Python Core/Agent SDK 的本地使用。
+当前决定：使用已有 npm 账号 **`hjs-api-db`**，包名 **`@hjs-api-db/jep-sdk-js`**，软件版本 **0.7.2**。GitHub 源码仓库仍是 **`hjs-spec/sdk-js`**。不再申请 npm 的 `hjs-spec` 用户/组织；不转换 `hjs-api-db`，不改 `jep-eth`，不动 `hjs-client` 或 `jep-snap`。
 
-在 npmjs.com 登录拥有 `@hjs-spec/jep-sdk-js` 发布管理权限的账户，进入该包 Settings → Trusted publishing，添加 GitHub Actions 发布者。
+[SDK #12](https://github.com/hjs-spec/sdk-js/pull/12) 已更新包元数据、导入/安装说明、测试和工作流。运行时代码与类型声明不变，协议仍是 Core 0.7；旧 0.7.1 安装包保持原样。旧交付记录中的 0.7.1 测试是其原组合证据，不自动代表新包已通过 npm 发布验收。
+
+### 先发布真实安装包，再配置 Trusted Publisher
+
+从 [GitHub v0.7.2](https://github.com/hjs-spec/sdk-js/releases/tag/v0.7.2) 获取 `hjs-api-db-jep-sdk-js-0.7.2.tgz`。不要给旧 tarball 改文件名冒充新包，不需要空壳占位包。
+
+在本机安装当前 Node.js LTS；使用 `hjs-api-db` 的已验证邮箱账号并启用 npm 双重验证。下载目录打开 PowerShell，逐条执行：
+
+```powershell
+npm.cmd login --auth-type=web --registry=https://registry.npmjs.org/
+npm.cmd whoami --registry=https://registry.npmjs.org/
+```
+
+只有 `whoami` 返回 **`hjs-api-db`** 才执行：
+
+```powershell
+npm.cmd publish .\hjs-api-db-jep-sdk-js-0.7.2.tgz --access public --registry=https://registry.npmjs.org/
+npm.cmd view @hjs-api-db/jep-sdk-js@0.7.2 version dist.integrity --registry=https://registry.npmjs.org/
+```
+
+密码、验证码、恢复码、Token、带令牌的登录链接都不发送到聊天。首次本地发布没有 GitHub OIDC provenance，不能声称已有。npm 上已有同版本时先核对完整性，不重复上传或删除重建。
+
+### 首次发布成功后的填写表
+
+进入 [新包设置](https://www.npmjs.com/package/@hjs-api-db/jep-sdk-js/access) → Trusted publishing → GitHub Actions：
 
 | 字段 | 填写值 |
 |---|---|
-| Organization or user | `hjs-spec` |
+| Organization or user | `hjs-spec`（这里填 GitHub 所有者，不是 npm 账号） |
 | Repository | `sdk-js` |
 | Workflow filename | `release.yml` |
 | Environment name | 留空，不填写 Any |
-| Allowed actions | 允许直接 `npm publish`，以匹配当前工作流 |
+| Allowed actions | 允许直接 `npm publish`，以匹配工作流 |
 
-当前仓库已使用 Node 24、GitHub 托管 runner 与 `id-token: write`。不需要把 npm Token 发给助手。npm 要求 npm CLI ≥11.5.1、Node ≥22.14.0；新授权的默认 stage 权限不等于允许当前直接发布命令。保存后只能说明配置已登记，实际发布时才会验证。
+工作流使用 Node 24、GitHub 托管 runner 与 `id-token: write`，不再使用旧 `NPM_TOKEN` 回退。首次发布及授权之后，未来的新版本可按该路径自动发布；保存配置并不等于已经完成一次 OIDC 发布验收。
 
-参考：[npm 官方 Trusted Publisher 文档](https://docs.npmjs.com/trusted-publishers/)；[实际仓库发布流程](https://github.com/hjs-spec/sdk-js/blob/main/.github/workflows/release.yml)。
+**不要重跑旧的 0.7.1 失败任务**：旧运行仍携带旧命名空间。首次手动发布 0.7.2 后，也不要再次上传同一版本来测试 OIDC。需要 registry-only 恢复时，`registry.yml` 要有自己的独立授权，不能使用仅授权 `release.yml` 的信任关系。
 
-配置完成后，交回“授权已保存”或不含秘密的截图即可。恢复时只重跑 [原运行](https://github.com/hjs-spec/sdk-js/actions/runs/36243899535) 中失败的 npm 任务，不重建 GitHub Release。验收包括注册表版本 0.7.1、实际下载 tarball 与 GitHub SHA-256 一致、干净目录安装和测试。
+首次发布后，独立核对 npm 版本、下载 tarball 的 SHA-256/SHA-512 与 GitHub 原件、在干净目录安装并导入新包。之后正常安装命令为 `npm install @hjs-api-db/jep-sdk-js@0.7.2`。未完成前，GitHub tarball 可直接安装；不宣称 npm 已可用。
 
-包名或权限页面不可见时先确认 npm 组织及包权限，不改包名、不删除现有版本。所有旧 Token 的撤销应在 OIDC 真正发布成功后另行确认。
+参考：[SDK 发布说明](https://github.com/hjs-spec/sdk-js/blob/main/PUBLISHING.md)、[npm 公开 scoped 包](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages/)、[npm Trusted Publisher](https://docs.npmjs.com/trusted-publishers/)。
 
 ## 2．Hugging Face 生产 API
 
