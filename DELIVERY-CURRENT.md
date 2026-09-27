@@ -25,27 +25,36 @@ Use a new environment. Do not install historical `jep-v06-conformance-seed` besi
 
 For a first usable signed record, follow the [local SDK example](https://github.com/hjs-spec/jep-agent-sdk#local-create--export--independent-verification). For HTTP integration, use [Quickstart](https://github.com/hjs-spec/jep-quickstart) and configure your own endpoint. Installing an HTTP client does not start or configure a service.
 
-## What has been verified
+## Current combination: completed verification
 
-The [hardening closeout](DELIVERY-2026-09-27-HARDENING.md) records publication and three-platform installation of Core 0.7.5 / SDK 2.1.6 with API 0.8.5. Its JavaScript member was the historical 0.7.1 tarball; that old report is not evidence for a changed combination.
+[Core #34](https://github.com/hjs-spec/jep-core/pull/34) is merged. Its checks use the actual API 0.8.5, Agent SDK 2.1.6 and new-scope JavaScript 0.7.2 release commits, with retained CLI/Go and Binding/02 reproduction pins.
 
-The [npm closeout](https://github.com/hjs-spec/sdk-js/blob/main/PUBLISHING.md) records independent public downloads and a clean, credential-free install of the actual new-scope 0.7.2 tarball. Its bytes matched the GitHub artifact. The owner subsequently confirmed that the Trusted Publisher was added and the temporary tokens/secret removed; that is owner confirmation, not a read-back or an actual OIDC upload test.
+- [Linux, Windows and macOS installations](https://github.com/hjs-spec/jep-core/actions/runs/36299156516): all three jobs passed. Each checked **13 original release files**, including four Python wheel/source pairs independently downloaded from PyPI and GitHub. The new-scope npm tarball was separately downloaded and compared to GitHub bytes and SHA-256/SHA-512/SHA-1 metadata. A credential-free npm install/import passed on each platform; Python wheels were installed with dependencies in a new environment.
+- Installed Python smoke checks on all three platforms passed J/D/T/V signatures, four Core/SDK/CLI roundtrips, eight tamper rejections, eighteen malformed-input rejections, missing-key `indeterminate`, and accepted/already-accepted/identity-conflict behavior.
+- [Current interoperability](https://github.com/hjs-spec/jep-core/actions/runs/36299156543): **11 signed events, five transport paths, 55 exact signed-artifact roundtrips, four verifiers and 50 Binding/02 structural/reference checks** passed. The paired Core/API/Agent boundary suite reports **25 passing cases**, including invalid-input rejection without consuming acceptance state. This is not 25 distinct vulnerabilities or a domain-policy/external-truth test.
+- [Core current/legacy conformance](https://github.com/hjs-spec/jep-core/actions/runs/36299156499): passed, retaining frozen-publication checks and adding package-link/registry-selection/isolation guard tests.
 
-The current combined gate is updated in [Core #34](https://github.com/hjs-spec/jep-core/pull/34): actual release commits, new npm scope, Linux/Windows/macOS installs, signature/hash transport and unchanged Binding/02 reproduction pins. Final check links are recorded in the PR; only completed passing runs count as evidence. Historical reports and files are not relabeled as this new set.
+Downloaded CI evidence ZIPs were checked against GitHub artifact digests; the included original release files were checked against the report digests. Reports, checksums and installation instructions remain downloadable from the runs. No release file was rebuilt or re-uploaded in this closeout.
 
-## Deployment and credentials
+The [earlier hardening closeout](DELIVERY-2026-09-27-HARDENING.md) included the historical JavaScript 0.7.1 tarball. It remains unchanged and is not relabeled as evidence for the new combined set. The script's explicit historical baseline is also preserved; the current CI uses `--current-release`.
 
-Maintainer-operated API hosting is deferred by the owner. The isolated Railway API, PostgreSQL service and persistent volume were removed and absence from the active resource inventory was checked. Backend retention and final billing are outside that inventory check. The original Hugging Face Space was left unchanged and is not a current production endpoint. No credentials or infrastructure need to be supplied for the local path.
+## npm account and publishing boundary
 
-[API #16](https://github.com/hjs-spec/jep-api/pull/16) removes automatic Hugging Face deployment after software releases; future hosting is manual opt-in with existing security/readiness checks. [JavaScript #15](https://github.com/hjs-spec/sdk-js/pull/15) retires the one-time npm bootstrap outside active workflows, preserving exact historical source. Normal releases and read-only package verification remain available.
+The [npm closeout](https://github.com/hjs-spec/sdk-js/blob/main/PUBLISHING.md) records completed public first publication. The owner subsequently confirmed that the `release.yml` Trusted Publisher was added and the temporary tokens/secret removed; that is owner confirmation, not an independent account-setting read-back or an actual OIDC upload test.
 
-Do not provision resources, recreate bootstrap tokens, repeat npm/PyPI uploads or test OIDC by republishing an existing version. Actual token-free npm publication is a next-intended-release acceptance item, not a present success claim.
+[JavaScript #15](https://github.com/hjs-spec/sdk-js/pull/15) is merged after [passing tests](https://github.com/hjs-spec/sdk-js/actions/runs/36298984316). It removes the one-time bootstrap from active workflows and preserves its exact text outside that directory. Normal OIDC releases and read-only installation checks remain available. Do not provision resources, recreate bootstrap tokens, repeat existing npm/PyPI uploads or create a version solely to test OIDC. Actual token-free npm publication is a next-intended-release acceptance item.
+
+## Hosted API remains deferred
+
+[API #16](https://github.com/hjs-spec/jep-api/pull/16) is merged after [regression checks passed](https://github.com/hjs-spec/jep-api/actions/runs/36298878884). Hugging Face deployment no longer runs after software releases. A deliberate future deployment requires main, a manual run and exact confirmation `deploy-hosted-api`, and still must pass existing production configuration/readiness gates. Software tests, source releases and container builds are retained.
+
+The isolated Railway API, PostgreSQL service and persistent volume were removed earlier and absence from active resource inventory was checked. Backend retention and final billing are outside that inventory check. The original Hugging Face Space was left unchanged and is not a current production endpoint. No credentials or infrastructure need to be supplied for the local path. This closeout provisions no new hosting resources and adds no scheduled monitoring.
 
 ## Publication-page and website limits
 
-Core #34 fixes README links and adds package project URLs in source for the next intended release. Already-uploaded PyPI metadata has not been replaced and the same version must not be overwritten. Current usable documentation is linked above.
+Core #34 fixes README links and adds package project URLs **in source for the next intended release**. Already-uploaded PyPI metadata has not been replaced and the same version must not be overwritten. Current usable documentation is linked above.
 
-The separate [website audit](WEBSITE-REVIEW-2026-09-27.md) distinguishes fresh public HTTP observations from cached search results. A site audit does not modify website source, purge its cache or resubmit search indexes.
+The [fresh website audit](WEBSITE-REVIEW-2026-09-27.md) confirms that the main protocol/architecture structure is already updated. Remaining work is narrower: the developer example, three old marketing/simulation routes, and absent robots/sitemap documents. The website responses identify Vercel; its owning project/source was not available through the current connection. The audit does not change website code, purge caches or resubmit search indexes. Website changes remain undeployed.
 
 ## Preserved evidence
 
