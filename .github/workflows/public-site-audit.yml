@@ -1,0 +1,28 @@
+name: Read-only public website audit
+on:
+  pull_request:
+    paths: ['scripts/audit_public_site.py', '.github/workflows/public-site-audit.yml']
+  push:
+    branches: [main]
+    paths: ['scripts/audit_public_site.py', '.github/workflows/public-site-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/audit_public_site.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: public-site-audit
+          path: public-site-audit/
+          retention-days: 14
