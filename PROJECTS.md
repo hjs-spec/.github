@@ -25,17 +25,39 @@ Choose **HTTP** when a service owns signing and acceptance state. Choose **local
 
 `sdk-py` calls a service; `jep-agent-sdk` records locally. They are different interfaces, not two competing protocol definitions. Local acceptance is single-process; use the API with shared PostgreSQL state when acceptance must span hosts.
 
-## Optional components
+<a id="optional-components"></a>
 
-These retained components are optional companions, independent experiments or explicitly historical integrations. A common J/D/T/V vocabulary or JSONL extension does **not** make their formats interchangeable. Check the [format matrix](https://github.com/hjs-spec/jep-core/blob/main/docs/architecture/architecture-notes.md#format-and-verification-matrix) before connecting them.
+## Optional protocol companions
+
+These components support JEP/HJS/JAC investigation but are not required for the
+current JEP/TSTO path. A common J/D/T/V vocabulary or JSONL extension does not make
+formats interchangeable. Check the [format matrix](https://github.com/hjs-spec/jep-core/blob/main/docs/architecture/architecture-notes.md#format-and-verification-matrix) before connecting them.
 
 | Repository | Purpose / boundary |
 |---|---|
 | [Agent-Blackbox](https://github.com/hjs-spec/Agent-Blackbox) | Alpha incident recorder; Core 0.7-style events with local JAC/HJS conventions |
 | [jac-agent-02](https://github.com/hjs-spec/jac-agent-02) | JAC declarations and fragment checks; pinned historical demo events |
-| [jep-github-action](https://github.com/hjs-spec/jep-github-action) | Historical Core 0.6 workflow integration; not the current onboarding path |
-| [aip-judgment-sidecar](https://github.com/hjs-spec/aip-judgment-sidecar) | Independent AIP receipt format and policy hook |
-| [shutup-mcp](https://github.com/hjs-spec/shutup-mcp) | Independent MCP tool filtering experiment |
+
+## Historical workflow integration
+
+[jep-github-action](https://github.com/hjs-spec/jep-github-action) retains a Core 0.6
+workflow integration. It is protocol-related, but not the current onboarding path.
+Use Quickstart and the current integration choices above for new deployments.
+
+## Independent experiments outside JEP/TSTO
+
+Organization membership is not protocol scope. The repositories below are not
+JEP/TSTO implementations, optional conformance requirements, or dependencies of
+the maintained protocol path. They retain their own source and published packages;
+no format migration or capability transfer is implied.
+
+| Repository | Actual purpose | Relationship to this protocol |
+|---|---|---|
+| [shutup-mcp](https://github.com/hjs-spec/shutup-mcp) | General MCP tool-list filtering | Unrelated to JEP events, TSTO objects, signatures or binding validation |
+| [aip-judgment-sidecar](https://github.com/hjs-spec/aip-judgment-sidecar) | Independent AIP receipt and policy-hook prototype | Adjacent research; its signed receipt is not a JEP event and has no TSTO binding |
+
+Keep independent product work outside the JEP/TSTO feature roadmap. A future
+protocol integration needs an explicit mapping and interoperability checks first.
 
 ## Research and organization
 
@@ -87,7 +109,8 @@ HJS documentation is available at the [public draft](https://datatracker.ietf.or
 4. Keep existing package names and commands stable. Merge implementation code only after format compatibility and a consumer migration path are proven.
 5. Preserve published drafts, signed artifacts and research baselines. Code fixes receive new software releases; documentation-only changes need no package version.
 6. Keep retired experiments outside the active feature roadmap. Reopening requires a concrete consumer, a named format and a maintenance owner.
-7. Add capability to its existing owner before creating a repository. [Portable evidence](https://github.com/hjs-spec/jep-core/blob/main/docs/decisions/portable-evidence-repository.md) starts in the SDK.
+7. Keep generic tool filtering, independent receipt formats and finite-model research guards outside Core requirements and the default integration path. SDK research imports remain available for compatibility, without a conformance claim.
+8. Add capability to its existing owner before creating a repository. [Portable evidence](https://github.com/hjs-spec/jep-core/blob/main/docs/decisions/portable-evidence-repository.md) starts in the SDK.
 
 [Current interoperability checks](https://github.com/hjs-spec/jep-core/tree/main/integration#current-core-07--binding02) verify signed artifacts across Core, clients, API and local recorders.
 
