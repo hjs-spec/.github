@@ -12,13 +12,13 @@ One protocol source, a no-API local introduction, and an explicit HTTP alternati
 
 ## Integrate
 
-Choose **HTTP** when a service owns signing and acceptance state. Choose **local recording** when the application owns its signing key and records agent calls.
+Choose **HTTP** when a service owns signing and acceptance state. Choose **local recording** when the application owns its signing key and records agent calls. Maintainer-operated production API hosting is currently deferred; HTTP users configure their own endpoint rather than relying on a historical demo Space.
 
 | Path | Repository | Responsibility |
 |---|---|---|
-| HTTP service | [jep-api](https://github.com/hjs-spec/jep-api) | Core 0.7 signing, verification, storage and acceptance state |
+| HTTP service | [jep-api](https://github.com/hjs-spec/jep-api) | Self-hostable Core 0.7 signing, verification, storage and acceptance state |
 | HTTP client | [sdk-py](https://github.com/hjs-spec/sdk-py) | Python client |
-| HTTP client | [sdk-js](https://github.com/hjs-spec/sdk-js) | JavaScript client; use the documented GitHub tarball while npm publication is blocked |
+| HTTP client | [sdk-js](https://github.com/hjs-spec/sdk-js) | JavaScript client; published on npm as `@hjs-api-db/jep-sdk-js` 0.7.2, with public install verification |
 | HTTP client | [sdk-go](https://github.com/hjs-spec/sdk-go) | Go client |
 | HTTP client | [cli](https://github.com/hjs-spec/cli) | Command-line client |
 | Local recording | [jep-agent-sdk](https://github.com/hjs-spec/jep-agent-sdk) | Signed Core 0.7 agent records, local verification and reports |
@@ -107,7 +107,7 @@ HJS documentation is available at the [public draft](https://datatracker.ietf.or
 1. Protocol definitions, schemas and conformance vectors live in Core. Downstream copies pin their source revision.
 2. New users start with the Agent SDK local example or explicitly choose HTTP Quickstart. Other repositories link to these paths instead of copying an onboarding stack.
 3. Every component states its format and actual verification scope. Never infer Core conformance from a name or a successful local replay.
-4. Keep existing package names and commands stable. Merge implementation code only after format compatibility and a consumer migration path are proven.
+4. Keep existing package names and commands stable. Merge implementation code only after format compatibility and a consumer migration path are proven. The documented npm 0.7.2 scope change is explicit; historical tarballs are unchanged.
 5. Preserve published drafts, signed artifacts and research baselines. Code fixes receive new software releases; documentation-only changes need no package version.
 6. Keep retired experiments outside the active feature roadmap. Reopening requires a concrete consumer, a named format and a maintenance owner.
 7. Keep generic tool filtering, independent receipt formats and finite-model research guards outside Core requirements and the default integration path. SDK research imports remain available for compatibility, without a conformance claim.
@@ -115,4 +115,4 @@ HJS documentation is available at the [public draft](https://datatracker.ietf.or
 
 [Current interoperability checks](https://github.com/hjs-spec/jep-core/tree/main/integration#current-core-07--binding02) verify signed artifacts across Core, clients, API and local recorders.
 
-[Delivery status](DELIVERY-2026-09-26.md) distinguishes GitHub releases, registries, containers and live deployments. [Consolidation provenance](https://github.com/hjs-spec/jep-core/blob/main/docs/REPOSITORY-CONSOLIDATION-2026-09.md) records the documentation move.
+[Current delivery status](DELIVERY-CURRENT.md) distinguishes GitHub releases, registries, containers, owner-confirmed account settings and actual live deployments. Dated reports remain historical evidence. [Consolidation provenance](https://github.com/hjs-spec/jep-core/blob/main/docs/REPOSITORY-CONSOLIDATION-2026-09.md) records the documentation move.
