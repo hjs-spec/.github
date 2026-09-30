@@ -25,7 +25,7 @@ Choose **HTTP** when a service owns signing and acceptance state. Choose **local
 | Local recording | [jep-agent-sdk](https://github.com/hjs-spec/jep-agent-sdk) | Signed Core 0.7 agent records, local verification and reports |
 | Completion binding | [tsto-spec](https://github.com/cognitive-emergence/tsto-spec) | TSTO/00 + JEP Core 0.7 + experimental Binding/02; completion policy stays with the application |
 
-`sdk-py` calls a service; `jep-agent-sdk` records locally. They are different interfaces, not two competing protocol definitions. Local acceptance is single-process; use the API with shared PostgreSQL state when acceptance must span hosts.
+Local acceptance is single-process. For acceptance across hosts, use the API with [shared PostgreSQL state](https://github.com/hjs-spec/jep-api/blob/main/DEPLOYMENT.md#multiple-hosts).
 
 <a id="optional-components"></a>
 <a id="optional-protocol-companions"></a>
@@ -40,12 +40,6 @@ formats and checks are listed in the [format matrix](https://github.com/hjs-spec
 | [Agent-Blackbox](https://github.com/hjs-spec/Agent-Blackbox) | Alpha incident recorder; local evidence digests, declared links and integrity checks |
 | [jac-agent-02](https://github.com/hjs-spec/jac-agent-02) | JAC declarations and fragment checks; pinned historical demo events |
 
-## Historical workflow integration
-
-[jep-github-action](https://github.com/hjs-spec/jep-github-action) was archived on
-2026-09-30 (UTC). Its Core 0.6 source, tags and releases remain available for
-historical workflows and regression reproduction.
-
 ## Research and organization
 
 | Repository | Responsibility |
@@ -54,23 +48,12 @@ historical workflows and regression reproduction.
 | [jep-papers-and-corpus](https://github.com/hjs-spec/jep-papers-and-corpus) | Versioned research and exploratory corpus; not a conformance suite |
 | [.github](https://github.com/hjs-spec/.github) | Organization homepage, this directory and delivery records |
 
-## Retired experiments
+[Interoperability checks](https://github.com/hjs-spec/jep-core/tree/main/integration#current-core-07--binding02) · [Released components](DELIVERY-CURRENT.md)
 
-Eight runtime, replay and observation experiments were archived on 2026-09-26.
-Their [repository list and retirement evidence](CONSOLIDATION-2026-09-26.md)
-and [original readers and migration limits](https://github.com/hjs-spec/jep-agent-sdk/blob/main/docs/INTEGRATIONS.md#existing-experimental-archives)
-remain available for reproduction.
+<a id="historical-workflow-integration"></a>
+<a id="retired-experiments"></a>
+<a id="earlier-documentation-archives"></a>
 
-## Earlier documentation archives
+## Archives
 
-These three were set read-only in the earlier consolidation on 2026-09-26. Original histories and releases remain available.
-
-| Archived repository | Maintained destination |
-|---|---|
-| [jep-architecture](https://github.com/hjs-spec/jep-architecture) | [Core architecture](https://github.com/hjs-spec/jep-core/tree/main/docs/architecture) |
-| [jep-vs-logging](https://github.com/hjs-spec/jep-vs-logging) | [Core logging comparison](https://github.com/hjs-spec/jep-core/blob/main/docs/comparisons/logging.md) |
-| [jep-e2e-demo](https://github.com/hjs-spec/jep-e2e-demo) | [Quickstart](https://github.com/hjs-spec/jep-quickstart); old Core 0.6 example preserved |
-
-[Current interoperability checks](https://github.com/hjs-spec/jep-core/tree/main/integration#current-core-07--binding02) verify signed artifacts across Core, clients, API and local recorders.
-
-[Current delivery status](DELIVERY-CURRENT.md) distinguishes GitHub releases, registries, containers, owner-confirmed account settings and actual live deployments. Dated reports remain historical evidence. [Consolidation provenance](https://github.com/hjs-spec/jep-core/blob/main/docs/REPOSITORY-CONSOLIDATION-2026-09.md) records the documentation move.
+[Archived repositories and migration references](ARCHIVES.md).
