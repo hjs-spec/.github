@@ -7,7 +7,7 @@ JEP records claims and the checks performed on them. A signature alone does not 
 
 | I want to… | Start with |
 |---|---|
-| Understand the protocol or check conformance | [JEP Core](https://github.com/hjs-spec/jep-core) |
+| Verify a first event, then implement Core | [Packaged sample and implementation path](https://github.com/hjs-spec/jep-core#verify-your-first-event) |
 | Create, export and independently verify without an API | [Local example](https://github.com/hjs-spec/jep-agent-sdk#local-create--export--independent-verification) |
 | Try the self-hosted HTTP service/client path | [HTTP Quickstart](https://github.com/hjs-spec/jep-quickstart) |
 | Integrate an application or agent | [Choose an integration](https://github.com/hjs-spec/.github/blob/main/PROJECTS.md#integrate) |
