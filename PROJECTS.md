@@ -12,7 +12,7 @@ Start with Core's packaged sample, then choose local recording or HTTP integrati
 
 ## Integrate
 
-Choose **HTTP** when a service owns signing and acceptance state. Choose **local recording** when the application owns its signing key and records agent calls. Maintainer-operated production API hosting is currently deferred; HTTP users configure their own endpoint rather than relying on a historical demo Space.
+Choose **HTTP** when a service owns signing and acceptance state. Choose **local recording** when the application owns its signing key and records agent calls. For HTTP integration, self-host the reference API and configure its endpoint.
 
 | Path | Repository | Responsibility |
 |---|---|---|
