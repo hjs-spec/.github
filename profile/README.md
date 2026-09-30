@@ -15,5 +15,3 @@ JEP records claims and the checks performed on them. A signature alone does not 
 Current protocol: **Core 0.7**, wire major `jep: "1"`. Software versions are independent. The published Internet-Draft -07 is frozen; historical formats use explicit compatibility paths. Maintainer-operated production API hosting is deferred and is not required for local use.
 
 [Repository directory](https://github.com/hjs-spec/.github/blob/main/PROJECTS.md) · [Architecture and format boundaries](https://github.com/hjs-spec/jep-core/tree/main/docs/architecture) · [Current delivery status](https://github.com/hjs-spec/.github/blob/main/DELIVERY-CURRENT.md)
-
-HJS (archive/evidence lifecycle) and JAC (declared dependencies) are optional companions. Retired runtime, replay and observation experiments remain available for reproduction; new signed recording and reports are maintained in the Agent SDK.
