@@ -9,7 +9,7 @@ versions are separate. Start with the
 | Component | Package / release | Scope |
 | --- | --- | --- |
 | Core verifier and BYOI | `jep-core-conformance==0.7.7` | GitHub and PyPI; local verification and scoped implementation tests |
-| Local recorder | `jep-agent-sdk==2.1.6` | Optional local creation/export; no hosted API required |
+| Local recorder | `jep-agent-sdk==2.1.7` | Optional local creation/export; no hosted API required |
 | HTTP CLI | `jep-cli==0.7.2` | Requires a separately configured API |
 | Python HTTP SDK | `jep-sdk-py==0.7.0` | Requires a separately configured API |
 | JavaScript HTTP SDK | `@hjs-api-db/jep-sdk-js@0.7.2` | GitHub and npm; GitHub owner remains hjs-spec |
