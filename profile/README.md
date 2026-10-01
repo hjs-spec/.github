@@ -17,4 +17,4 @@ Current protocol: **Core 0.7 · Internet-Draft -07**.
 
 [Repository directory](https://github.com/hjs-spec/.github/blob/main/PROJECTS.md) · [Architecture and format boundaries](https://github.com/hjs-spec/jep-core/tree/main/docs/architecture) · [Current delivery status](https://github.com/hjs-spec/.github/blob/main/DELIVERY-CURRENT.md)
 
-[Contribute or report an implementation](https://github.com/hjs-spec/jep-core/blob/main/CONTRIBUTING.md) · [Licensing](https://github.com/hjs-spec/jep-core/blob/main/LICENSING.md) · [Report a security issue privately](https://github.com/hjs-spec/jep-core/blob/main/SECURITY.md)
+[Contribute or report an implementation](https://github.com/hjs-spec/.github/blob/main/CONTRIBUTING.md) · [Licensing](https://github.com/hjs-spec/jep-core/blob/main/LICENSING.md) · [Report a security issue privately](https://github.com/hjs-spec/.github/blob/main/SECURITY.md)
