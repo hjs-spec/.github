@@ -6,6 +6,7 @@ Choose the route that matches your contribution:
 |---|---|
 | Software bug, setup problem or documentation correction | Open an issue in the affected repository with the package version or commit, command, expected result and actual result. Use a minimal example with synthetic data. Small documentation fixes can go directly to a pull request. |
 | Specification ambiguity | [Core issue](https://github.com/hjs-spec/jep-core/issues/new): identify the draft, section and conflicting behavior. |
+| First attempt to use JEP | Choose a [first-use task](https://github.com/hjs-spec/jep-core/blob/main/docs/FIRST-USE-CHECK.md) and submit its result or blocker through the linked form. |
 | Independent implementation | [Implementation report](https://github.com/hjs-spec/jep-core/issues/new?template=independent-implementation.yml): identify the implementation, version, supported roles and reused libraries. |
 | Interoperability results | Run the [BYOI guide](https://github.com/hjs-spec/jep-core/blob/main/docs/BYOI-CONFORMANCE.md), then attach the report and reproducible commands to an [interop result](https://github.com/hjs-spec/jep-core/issues/new?template=interoperability-result.yml). |
 | Security-sensitive issue | Follow [SECURITY.md](SECURITY.md); report privately. |

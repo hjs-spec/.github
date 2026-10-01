@@ -11,11 +11,11 @@ versions are separate. Start with the
 | Core verifier and BYOI | `jep-core-conformance==0.7.7` | GitHub and PyPI; local verification and scoped implementation tests |
 | Local recorder | `jep-agent-sdk==2.1.8` | Optional local creation/export; no hosted API required |
 | HTTP CLI | `jep-cli==0.7.2` | Requires a separately configured API |
-| Python HTTP SDK | `jep-sdk-py==0.7.0` | Requires a separately configured API |
+| Python HTTP SDK | `jep-sdk-py==0.7.1` | Requires a separately configured API |
 | JavaScript HTTP SDK | `@hjs-api-db/jep-sdk-js@0.7.2` | GitHub and npm; GitHub owner remains hjs-spec |
 | Go HTTP SDK | `hjs-spec/sdk-go` v0.7.2 | HTTP transport, not an independent verifier |
-| HTTP Quickstart | v0.7.1 | GitHub wheel/source; recording recovery requires API 0.8.6+ |
-| Reference API | v0.8.6 | Source/container release; self-hosting available |
+| HTTP Quickstart | v0.7.2 | GitHub wheel/source; recording recovery requires API 0.8.6+ |
+| Reference API | v0.8.7 | Source/container release; self-hosting available |
 
 To create your own signed record with the optional recorder, follow the
 [Agent SDK local example](https://github.com/hjs-spec/jep-agent-sdk#local-create--export--independent-verification).
@@ -24,12 +24,18 @@ For HTTP integrations, use the [component directory](PROJECTS.md#integrate).
 ## Adoption fixes verified on 2026-10-01
 
 - [Agent SDK 2.1.8](https://github.com/hjs-spec/jep-agent-sdk/releases/tag/v2.1.8) accepts the existing string and array V scopes. CI passes on Python 3.10–3.13. A fresh PyPI installation passes all 29 selected BYOI producer/verifier checks through a disclosed SDK wrapper; eight acceptance checks are outside that run. GitHub and PyPI wheel/source hashes agree.
-- [API 0.8.6](https://github.com/hjs-spec/jep-api/releases/tag/v0.8.6) preserves the original creation response for an unchanged caller-ID request. [Release checks](https://github.com/hjs-spec/jep-api/actions/runs/36804738409) include 132 tests with real PostgreSQL, migration, concurrent replicas and the container smoke check. Follow the [upgrade and recovery instructions](https://github.com/hjs-spec/jep-api/blob/main/DEPLOYMENT.md#upgrade-from-sqlite).
-- [Quickstart 0.7.1](https://github.com/hjs-spec/jep-quickstart/releases/tag/v0.7.1) separates business completion from recording failure. Its [release tests](https://github.com/hjs-spec/jep-quickstart/actions/runs/36804934335) exercise recovery over real HTTP against the pinned API 0.8.6 commit; recovery resends the saved recording request without rerunning the callable.
-- [Contribution routes](CONTRIBUTING.md) and [private security reporting](SECURITY.md) are shared across component repositories. Component-specific guides retain their development instructions.
+- [API 0.8.7](https://github.com/hjs-spec/jep-api/releases/tag/v0.8.7) preserves the original creation response for an unchanged caller-ID request. [Release checks](https://github.com/hjs-spec/jep-api/actions/runs/36807795504) include 132 tests with real PostgreSQL, migration, concurrent replicas and the container smoke check. Follow the [upgrade and recovery instructions](https://github.com/hjs-spec/jep-api/blob/main/DEPLOYMENT.md#upgrade-from-sqlite).
+- [Quickstart 0.7.2](https://github.com/hjs-spec/jep-quickstart/releases/tag/v0.7.2) separates business completion from recording failure. Its [release tests](https://github.com/hjs-spec/jep-quickstart/actions/runs/36808099905) exercise recovery over real HTTP against the pinned API 0.8.7 commit; recovery resends the saved recording request without rerunning the callable.
+- API 0.8.7 supplies MIT terms for original code and retains BSD-3-Clause for Core schema/fixture copies. [Python SDK 0.7.1](https://github.com/hjs-spec/sdk-py/releases/tag/v0.7.1) supplies its declared MIT license; Quickstart 0.7.2 supplies BSD-3-Clause. Full license texts and scope notices are checked in source, wheel and container distributions as applicable. Downloaded Python SDK artifacts match the GitHub release digests and pass all 10 client tests; downloaded Quickstart artifacts pass all 18 real-HTTP tests against the downloaded API source.
+- [Contribution routes](CONTRIBUTING.md) and [private security reporting](SECURITY.md) are shared across component repositories. Component-specific guides retain their development instructions. The [first-use check and feedback form](https://github.com/hjs-spec/jep-core/blob/main/docs/FIRST-USE-CHECK.md) cover verification, local creation, HTTP and BYOI through existing guides.
 
 These are implementation and adoption corrections. Core 0.7 semantics and frozen
 specification artifacts are unchanged.
+
+## Remaining adoption work
+
+- **Main-branch enforcement is not active.** Eight [reviewed ruleset configurations](maintenance/branch-rules/README.md) are ready for administrator activation. On 2026-10-01, all eight repositories returned no rulesets and `protected: false`. Committed configuration files do not change repository settings. Required checks are scoped to jobs that run on every PR; release jobs are excluded.
+- **External first-use evidence still requires participants.** The guide and report form are live. Maintainer checks and reference wrappers are not independently reported trials or independent implementations. Publish actual participant reports before claiming this gap is closed.
 
 ## Verification evidence for Core software 0.7.7
 
@@ -42,7 +48,7 @@ See each report for its exact versions, artifacts and validation scope.
 
 ## History
 
-The [previous maintained snapshot](https://github.com/hjs-spec/.github/blob/79fadc545740a746d00482e1176fb9fbc8ae12a9/DELIVERY-CURRENT.md)
+The [previous maintained snapshot](https://github.com/hjs-spec/.github/blob/dacd2dcac038a21a8ee20e73cee145fda6ed5a1b/DELIVERY-CURRENT.md)
 preserves the earlier release set, checks and operational decisions. Other dated
 records remain unchanged: [2026-09-26 audit](DELIVERY-2026-09-26-HISTORICAL.md),
 [2026-09-27 closeout](DELIVERY-2026-09-27.md) and [hardening evidence](DELIVERY-2026-09-27-HARDENING.md).
