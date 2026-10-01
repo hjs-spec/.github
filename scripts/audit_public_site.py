@@ -8,16 +8,22 @@ from urllib.error import HTTPError
 from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
-HOSTS = {'humanjudgment.org', 'www.humanjudgment.org'}
-ROUTES = ['/', '/protocol', '/developers', '/architecture', '/governance', '/alignment', '/primitives', '/robots.txt', '/sitemap.xml']
-MARKERS = ['draft-06', 'nonce', 'validation levels', 'zero pii', 'sovereign witness', '1.5ms', '100k', 'jep-core 0.7', 'event identity']
+HOSTS = {'judgmentevent.org', 'www.judgmentevent.org', 'humanjudgment.org', 'www.humanjudgment.org'}
+ROUTES = ['/', '/protocol', '/developers', '/architecture', '/about', '/robots.txt', '/sitemap.xml']
+LEGACY_ROUTES = ['/applications', '/gap', '/specification']
+MARKERS = ['draft-06', 'nonce', 'validation levels', 'zero pii', 'sovereign witness', '1.5ms', '100k', 'jep-core 0.7', 'event identity', 'prevents ai from unilaterally', 'instant accountability attribution', 'jep resolves this by inserting layer 7+']
 
 
 class Redirects(HTTPRedirectHandler):
+    def __init__(self):
+        super().__init__()
+        self.hops = []
+
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         parsed = urlsplit(newurl)
         if parsed.scheme != 'https' or parsed.hostname not in HOSTS:
             raise ValueError('Unexpected redirect target; no request sent: ' + newurl)
+        self.hops.append({'from': req.full_url, 'status': code, 'to': newurl})
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
@@ -51,11 +57,15 @@ def main():
     root.mkdir(exist_ok=True)
     report = {'checked_at': datetime.now(timezone.utc).isoformat(), 'observations': [],
               'scope': 'Fresh public HTTP, not source/deployment access or search-index verification.'}
-    opener = build_opener(Redirects())
-    targets = [('www.humanjudgment.org', route) for route in ROUTES] + [('humanjudgment.org', '/'), ('humanjudgment.org', '/developers')]
+    redirects = Redirects()
+    opener = build_opener(redirects)
+    targets = [('www.judgmentevent.org', route) for route in ROUTES]
+    targets += [(host, route) for host in ('www.judgmentevent.org', 'www.humanjudgment.org') for route in LEGACY_ROUTES]
+    targets += [('www.humanjudgment.org', '/'), ('www.humanjudgment.org', '/developers'), ('humanjudgment.org', '/'), ('judgmentevent.org', '/')]
     for index, (host, route) in enumerate(targets):
         url = 'https://' + host + route
         item = {'requested_url': url}
+        redirects.hops = []
         try:
             try:
                 response = opener.open(Request(url, headers={'User-Agent': 'JEP-public-entry-audit/1.0', 'Cache-Control': 'no-cache'}), timeout=20)
@@ -78,6 +88,7 @@ def main():
                         rendering='client-rendered-or-sparse' if len(visible) < 200 and page.scripts else 'HTTP text captured')
         except Exception as exc:
             item['error'] = type(exc).__name__ + ': ' + str(exc)
+        item['redirects'] = redirects.hops
         report['observations'].append(item)
     (root / 'report.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps(report, indent=2))
