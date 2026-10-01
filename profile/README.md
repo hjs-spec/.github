@@ -4,6 +4,8 @@ Create portable signed event records and verify their structure and signatures.
 JEP defines statements of **Judgment, Delegation, Termination and Verification**.
 JEP records claims and the checks performed on them. A signature alone does not establish truth, authority, legal effect or complete logging.
 
+[Website](https://www.judgmentevent.org/) · [Getting started](https://www.judgmentevent.org/developers)
+
 ## Start here
 
 | I want to… | Start with |
