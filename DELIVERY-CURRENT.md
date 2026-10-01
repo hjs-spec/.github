@@ -1,6 +1,6 @@
 # Current JEP delivery status
 
-Updated 2026-09-30 (UTC). Core protocol **0.7 / Internet-Draft -07** and software package
+Updated 2026-10-01 (UTC). Core protocol **0.7 / Internet-Draft -07** and software package
 versions are separate. Start with the
 [released verifier and packaged sample](https://github.com/hjs-spec/jep-core#verify-your-first-event).
 
@@ -9,17 +9,27 @@ versions are separate. Start with the
 | Component | Package / release | Scope |
 | --- | --- | --- |
 | Core verifier and BYOI | `jep-core-conformance==0.7.7` | GitHub and PyPI; local verification and scoped implementation tests |
-| Local recorder | `jep-agent-sdk==2.1.7` | Optional local creation/export; no hosted API required |
+| Local recorder | `jep-agent-sdk==2.1.8` | Optional local creation/export; no hosted API required |
 | HTTP CLI | `jep-cli==0.7.2` | Requires a separately configured API |
 | Python HTTP SDK | `jep-sdk-py==0.7.0` | Requires a separately configured API |
 | JavaScript HTTP SDK | `@hjs-api-db/jep-sdk-js@0.7.2` | GitHub and npm; GitHub owner remains hjs-spec |
 | Go HTTP SDK | `hjs-spec/sdk-go` v0.7.2 | HTTP transport, not an independent verifier |
-| HTTP Quickstart | v0.7.0 | Optional local API setup |
-| Reference API | v0.8.5 | Source/container release; self-hosting available |
+| HTTP Quickstart | v0.7.1 | GitHub wheel/source; recording recovery requires API 0.8.6+ |
+| Reference API | v0.8.6 | Source/container release; self-hosting available |
 
 To create your own signed record with the optional recorder, follow the
 [Agent SDK local example](https://github.com/hjs-spec/jep-agent-sdk#local-create--export--independent-verification).
 For HTTP integrations, use the [component directory](PROJECTS.md#integrate).
+
+## Adoption fixes verified on 2026-10-01
+
+- [Agent SDK 2.1.8](https://github.com/hjs-spec/jep-agent-sdk/releases/tag/v2.1.8) accepts the existing string and array V scopes. CI passes on Python 3.10–3.13. A fresh PyPI installation passes all 29 selected BYOI producer/verifier checks through a disclosed SDK wrapper; eight acceptance checks are outside that run. GitHub and PyPI wheel/source hashes agree.
+- [API 0.8.6](https://github.com/hjs-spec/jep-api/releases/tag/v0.8.6) preserves the original creation response for an unchanged caller-ID request. [Release checks](https://github.com/hjs-spec/jep-api/actions/runs/36804738409) include 132 tests with real PostgreSQL, migration, concurrent replicas and the container smoke check. Follow the [upgrade and recovery instructions](https://github.com/hjs-spec/jep-api/blob/main/DEPLOYMENT.md#upgrade-from-sqlite).
+- [Quickstart 0.7.1](https://github.com/hjs-spec/jep-quickstart/releases/tag/v0.7.1) separates business completion from recording failure. Its [release tests](https://github.com/hjs-spec/jep-quickstart/actions/runs/36804934335) exercise recovery over real HTTP against the pinned API 0.8.6 commit; recovery resends the saved recording request without rerunning the callable.
+- [Contribution routes](CONTRIBUTING.md) and [private security reporting](SECURITY.md) are shared across component repositories. Component-specific guides retain their development instructions.
+
+These are implementation and adoption corrections. Core 0.7 semantics and frozen
+specification artifacts are unchanged.
 
 ## Verification evidence for Core software 0.7.7
 
