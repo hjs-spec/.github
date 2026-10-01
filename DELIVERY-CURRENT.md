@@ -29,12 +29,13 @@ For HTTP integrations, use the [component directory](PROJECTS.md#integrate).
 - API 0.8.7 supplies MIT terms for original code and retains BSD-3-Clause for Core schema/fixture copies. [Python SDK 0.7.1](https://github.com/hjs-spec/sdk-py/releases/tag/v0.7.1) supplies its declared MIT license; Quickstart 0.7.2 supplies BSD-3-Clause. Full license texts and scope notices are checked in source, wheel and container distributions as applicable. Downloaded Python SDK artifacts match the GitHub release digests and pass all 10 client tests; downloaded Quickstart artifacts pass all 18 real-HTTP tests against the downloaded API source.
 - [Contribution routes](CONTRIBUTING.md) and [private security reporting](SECURITY.md) are shared across component repositories. Component-specific guides retain their development instructions. The [first-use check and feedback form](https://github.com/hjs-spec/jep-core/blob/main/docs/FIRST-USE-CHECK.md) cover verification, local creation, HTTP and BYOI through existing guides.
 
+- **Main-branch enforcement is active in all eight primary repositories.** The [ruleset IDs and checks](maintenance/branch-rules/README.md) were verified on 2026-10-01: all eight report `protected: true`, 24 required GitHub Actions checks match the reviewed inputs, and no bypass actors are configured. Merging requires a PR, an up-to-date branch and resolved review conversations; force pushes and deletion are blocked. Required approvals remain zero for the single-maintainer workflow. [Core #44](https://github.com/hjs-spec/jep-core/pull/44) verified the normal PR path: 12 checks appeared as Required, merging was disabled while checks were running, and the PR merged after all 12 passed.
+
 These are implementation and adoption corrections. Core 0.7 semantics and frozen
 specification artifacts are unchanged.
 
 ## Remaining adoption work
 
-- **Main-branch enforcement is not active.** Eight [reviewed ruleset configurations](maintenance/branch-rules/README.md) are ready for administrator activation. On 2026-10-01, all eight repositories returned no rulesets and `protected: false`. Committed configuration files do not change repository settings. Required checks are scoped to jobs that run on every PR; release jobs are excluded.
 - **External first-use evidence still requires participants.** The guide and report form are live. Maintainer checks and reference wrappers are not independently reported trials or independent implementations. Publish actual participant reports before claiming this gap is closed.
 
 ## Verification evidence for Core software 0.7.7
