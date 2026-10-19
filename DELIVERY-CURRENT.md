@@ -1,6 +1,6 @@
 # Current JEP delivery status
 
-Updated 2026-10-01 (UTC). Core protocol **0.7 / Internet-Draft -07** and software package
+Updated 2026-10-19 (UTC). Core protocol **0.7 / Internet-Draft -07** and software package
 versions are separate. Start with the
 [released verifier and packaged sample](https://github.com/hjs-spec/jep-core#verify-your-first-event).
 
@@ -36,7 +36,15 @@ specification artifacts are unchanged.
 
 ## Remaining adoption work
 
-- **External first-use evidence still requires participants.** The guide and report form are live. Maintainer checks and reference wrappers are not independently reported trials or independent implementations. Publish actual participant reports before claiming this gap is closed.
+- **Real-workflow first-use evidence still requires participants.** An independently authored implementation and reproducible fixture report now exist (see below). Maintainer reruns and JEP-owned bridges are disclosed separately; they do not establish real deployment, organizational adoption or production effects.
+- The existing ClawHub `schchit/judgment-event-protocol` listing needs its prepared replacement published through the owner account. The website developers copy needs the prepared terminology patch applied in its existing project.
+
+## Independent implementation and October follow-up
+
+- [Probity report #47](https://github.com/hjs-spec/jep-core/issues/47) supplies independently authored Core 0.7 producer, verifier and synthetic acceptance processing. The [fixed pilot #48](https://github.com/hjs-spec/jep-core/pull/48) pins reader commit `cbd3ea8f4de89b835d6d3c4182ff4b4b1c7608f9` and the agreed suite; its 37 selected checks and deliberate-fault controls pass.
+- [Native BYOI integration #50](https://github.com/hjs-spec/jep-core/pull/50) adds an optional disposable-state setup hook and an explicitly JEP-owned bridge. The unchanged pinned reader passes 25 verifier, four producer and eight acceptance checks. Bridge mappings and synthetic ledger effects are disclosed in the [reproduction guide](https://github.com/hjs-spec/jep-core/blob/main/docs/PROBITY-NATIVE-BYOI.md).
+- Contributor [candidate check #49](https://github.com/hjs-spec/jep-core/pull/49), integrated through [#51](https://github.com/hjs-spec/jep-core/pull/51), tests candidate code against frozen agreed cases, candidate cases and the pinned separate reader. Source-fault, poisoned-expectation and suite-metadata controls pass. All four integration PR workflow runs passed. This does not add a required branch check or change Core requirements.
+- Frozen Core/Profiles/Conformance publications, signed vectors and BYOI suite bytes remain unchanged. Test evidence covers selected public fixtures and isolated synthetic state; it does not establish external authorization or business effects.
 
 ## Verification evidence for Core software 0.7.7
 
