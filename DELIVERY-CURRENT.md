@@ -37,12 +37,12 @@ specification artifacts are unchanged.
 ## Remaining adoption work
 
 - **Real-workflow first-use evidence still requires participants.** An independently authored implementation and reproducible fixture report now exist (see below). Maintainer reruns and JEP-owned bridges are disclosed separately; they do not establish real deployment, organizational adoption or production effects.
-- The existing ClawHub `schchit/judgment-event-protocol` listing has a prepared replacement; publication requires confirmation of ClawHub's MIT-0 license and upload through the owner account. The website developers copy needs the prepared terminology patch applied in its existing project.
+- The existing ClawHub `schchit/judgment-event-protocol` listing has a prepared replacement and owner confirmation of MIT-0 publication. Browser file upload remains blocked; the listing has not been republished.
 
 ## Core software 0.7.8
 
 - [Release #52](https://github.com/hjs-spec/jep-core/pull/52) publishes the optional BYOI `--state-setup` hook and current installation instructions. [GitHub 0.7.8](https://github.com/hjs-spec/jep-core/releases/tag/v0.7.8) provides the source, wheel and explicit legacy Go binaries. The [publication and installed-release run](https://github.com/hjs-spec/jep-core/actions/runs/39194682391) records successful PyPI publication and the registry installation outcomes. GitHub/PyPI wheel and source SHA-256 digests agree. Actual registry installation checks passed on Linux, Windows and macOS. A fresh public PyPI install also passed the sample verification, 29-case reference demo and all 37 native Probity BYOI cases through the disclosed bridge.
-- [External publication sources #53](https://github.com/hjs-spec/jep-core/pull/53) retain the replacement ClawHub skill and exact website developers copy corrections. Their merge does not publish either external page.
+- [External publication sources #53](https://github.com/hjs-spec/jep-core/pull/53) retain the replacement ClawHub skill and exact website developers copy corrections. The developers correction was subsequently published from the existing v0 `v0-web-page-creation` project, deployment `5b2YGKfHE5wWCDxFT579HpVr9RYw`. Live English and Chinese copy on https://www.judgmentevent.org/developers was checked for actor/time wording, signing payload versus full signed-event hash, and installation pin 0.7.8. ClawHub publication remains pending upload.
 
 ## Independent implementation and October follow-up
 
