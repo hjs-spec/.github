@@ -41,7 +41,7 @@ specification artifacts are unchanged.
 
 ## Core software 0.7.8
 
-- [Release #52](https://github.com/hjs-spec/jep-core/pull/52) publishes the optional BYOI `--state-setup` hook and current installation instructions. [GitHub 0.7.8](https://github.com/hjs-spec/jep-core/releases/tag/v0.7.8) provides the source, wheel and explicit legacy Go binaries. The [publication and installed-release run](https://github.com/hjs-spec/jep-core/actions/runs/39194682391) records successful PyPI publication and the registry installation outcomes. GitHub/PyPI wheel and source SHA-256 digests agree.
+- [Release #52](https://github.com/hjs-spec/jep-core/pull/52) publishes the optional BYOI `--state-setup` hook and current installation instructions. [GitHub 0.7.8](https://github.com/hjs-spec/jep-core/releases/tag/v0.7.8) provides the source, wheel and explicit legacy Go binaries. The [publication and installed-release run](https://github.com/hjs-spec/jep-core/actions/runs/39194682391) records successful PyPI publication and the registry installation outcomes. GitHub/PyPI wheel and source SHA-256 digests agree. Actual registry installation checks passed on Linux, Windows and macOS. A fresh public PyPI install also passed the sample verification, 29-case reference demo and all 37 native Probity BYOI cases through the disclosed bridge.
 - [External publication sources #53](https://github.com/hjs-spec/jep-core/pull/53) retain the replacement ClawHub skill and exact website developers copy corrections. Their merge does not publish either external page.
 
 ## Independent implementation and October follow-up
