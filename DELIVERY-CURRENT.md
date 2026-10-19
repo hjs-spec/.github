@@ -37,12 +37,12 @@ specification artifacts are unchanged.
 ## Remaining adoption work
 
 - **Real-workflow first-use evidence still requires participants.** An independently authored implementation and reproducible fixture report now exist (see below). Maintainer reruns and JEP-owned bridges are disclosed separately; they do not establish real deployment, organizational adoption or production effects.
-- The existing ClawHub `schchit/judgment-event-protocol` listing has a prepared replacement and owner confirmation of MIT-0 publication. Browser file upload remains blocked; the listing has not been republished.
+- [ClawHub `schchit/judgment-event-protocol` 1.0.2](https://clawhub.ai/schchit/skills/judgment-event-protocol) is live under the owner-approved MIT-0 license. The current page shows version 1.0.2, a passing security audit and the replacement Core 0.7 / tooling 0.7.8 guidance. The earlier upload blocker is resolved.
 
 ## Core software 0.7.8
 
 - [Release #52](https://github.com/hjs-spec/jep-core/pull/52) publishes the optional BYOI `--state-setup` hook and current installation instructions. [GitHub 0.7.8](https://github.com/hjs-spec/jep-core/releases/tag/v0.7.8) provides the source, wheel and explicit legacy Go binaries. The [publication and installed-release run](https://github.com/hjs-spec/jep-core/actions/runs/39194682391) records successful PyPI publication and the registry installation outcomes. GitHub/PyPI wheel and source SHA-256 digests agree. Actual registry installation checks passed on Linux, Windows and macOS. A fresh public PyPI install also passed the sample verification, 29-case reference demo and all 37 native Probity BYOI cases through the disclosed bridge.
-- [External publication sources #53](https://github.com/hjs-spec/jep-core/pull/53) retain the replacement ClawHub skill and exact website developers copy corrections. The developers correction was subsequently published from the existing v0 `v0-web-page-creation` project, deployment `5b2YGKfHE5wWCDxFT579HpVr9RYw`. Live English and Chinese copy on https://www.judgmentevent.org/developers was checked for actor/time wording, signing payload versus full signed-event hash, and installation pin 0.7.8. ClawHub publication remains pending upload.
+- [External publication sources #53](https://github.com/hjs-spec/jep-core/pull/53) retain the replacement ClawHub skill and exact website developers copy corrections. The developers correction was subsequently published from the existing v0 `v0-web-page-creation` project, deployment `5b2YGKfHE5wWCDxFT579HpVr9RYw`. Live English and Chinese copy on https://www.judgmentevent.org/developers was checked for actor/time wording, signing payload versus full signed-event hash, and installation pin 0.7.8. ClawHub 1.0.2 was subsequently published and its live current-version content and passing security audit were checked.
 
 ## Independent implementation and October follow-up
 
