@@ -8,7 +8,7 @@ versions are separate. Start with the
 
 | Component | Package / release | Scope |
 | --- | --- | --- |
-| Core verifier and BYOI | `jep-core-conformance==0.7.7` | GitHub and PyPI; local verification and scoped implementation tests |
+| Core verifier and BYOI | `jep-core-conformance==0.7.8` | GitHub and PyPI; local verification and scoped implementation tests |
 | Local recorder | `jep-agent-sdk==2.1.8` | Optional local creation/export; no hosted API required |
 | HTTP CLI | `jep-cli==0.7.2` | Requires a separately configured API |
 | Python HTTP SDK | `jep-sdk-py==0.7.1` | Requires a separately configured API |
@@ -37,7 +37,12 @@ specification artifacts are unchanged.
 ## Remaining adoption work
 
 - **Real-workflow first-use evidence still requires participants.** An independently authored implementation and reproducible fixture report now exist (see below). Maintainer reruns and JEP-owned bridges are disclosed separately; they do not establish real deployment, organizational adoption or production effects.
-- The existing ClawHub `schchit/judgment-event-protocol` listing needs its prepared replacement published through the owner account. The website developers copy needs the prepared terminology patch applied in its existing project.
+- The existing ClawHub `schchit/judgment-event-protocol` listing has a prepared replacement; publication requires confirmation of ClawHub's MIT-0 license and upload through the owner account. The website developers copy needs the prepared terminology patch applied in its existing project.
+
+## Core software 0.7.8
+
+- [Release #52](https://github.com/hjs-spec/jep-core/pull/52) publishes the optional BYOI `--state-setup` hook and current installation instructions. [GitHub 0.7.8](https://github.com/hjs-spec/jep-core/releases/tag/v0.7.8) provides the source, wheel and explicit legacy Go binaries. The [publication and installed-release run](https://github.com/hjs-spec/jep-core/actions/runs/39194682391) records successful PyPI publication and the registry installation outcomes. GitHub/PyPI wheel and source SHA-256 digests agree.
+- [External publication sources #53](https://github.com/hjs-spec/jep-core/pull/53) retain the replacement ClawHub skill and exact website developers copy corrections. Their merge does not publish either external page.
 
 ## Independent implementation and October follow-up
 
